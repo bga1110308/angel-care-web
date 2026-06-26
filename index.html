@@ -205,6 +205,23 @@ section{padding:96px 0}
 .video-wrap{margin-top:28px;display:flex;flex-direction:column;align-items:center}
 .video-wrap video{width:auto;max-width:100%;max-height:520px;border-radius:18px;box-shadow:var(--shadow);background:#000}
 .video-cap{margin-top:14px;color:var(--ink-soft);font-size:.95rem;text-align:center}
+/* YouTube 影片區：封面先顯示，點了才載入播放器，保持網頁輕快 */
+.videos{margin-top:36px}
+.vid-h{font-family:var(--serif);font-size:1.4rem;font-weight:900;text-align:center;margin:42px 0 6px;color:var(--ink)}
+.vid-note{text-align:center;color:var(--ink-soft);max-width:700px;margin:0 auto 22px}
+.yt-feature{max-width:760px;margin:0 auto}
+.yt-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:8px}
+.vid-item{display:flex;flex-direction:column}
+.yt{position:relative;aspect-ratio:16/9;border-radius:16px;overflow:hidden;cursor:pointer;background:#000;box-shadow:var(--shadow)}
+.yt img{width:100%;height:100%;object-fit:cover;display:block}
+.yt iframe{width:100%;height:100%;border:0;display:block}
+.yt .yt-play{position:absolute;inset:0;margin:auto;width:62px;height:62px;border:0;border-radius:50%;background:rgba(245,166,35,.92);display:flex;align-items:center;justify-content:center;cursor:pointer;transition:background .2s}
+.yt .yt-play svg{width:28px;height:28px;color:#fff;margin-left:4px}
+.yt:hover .yt-play{background:var(--gold-bright)}
+.yt-cap{margin-top:10px;text-align:center;color:var(--ink-soft);font-size:.92rem}
+.yt-cap.big{font-size:1.05rem;color:var(--ink);margin-top:14px}
+@media(max-width:760px){.yt-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:480px){.yt-grid{grid-template-columns:1fr}}
 
 /* ============================================================
    活動相片牆（照片之後嵌入）
@@ -550,12 +567,42 @@ footer .small{font-size:.85rem;opacity:.7;line-height:1.9}
       <div class="photo"><img src="photo_team.jpg" alt="大天使團隊大合照"></div>
       <div class="photo"><img src="photo_trip.jpg" alt="夥伴一起出遊，到海邊放鬆"></div>
     </div>
-    <div class="video-wrap reveal">
-      <video controls preload="none" playsinline poster="care_video_poster.jpg">
-        <source src="care_video.mp4" type="video/mp4">
-        您的瀏覽器不支援影片播放，請改用 Chrome 或 Safari。
-      </video>
-      <p class="video-cap">居服員的日常：到長輩家備餐，再陪阿公一起吃飯</p>
+    <!-- ===== 影片區：主打 + 居服員現身說法 + 備餐故事 ===== -->
+    <div class="videos">
+
+      <!-- 主打 -->
+      <div class="yt-feature reveal">
+        <div class="yt" data-id="Y8agTYdHDU8"><img loading="lazy" src="https://i.ytimg.com/vi/Y8agTYdHDU8/hqdefault.jpg" alt="認識大天使"><button class="yt-play" aria-label="播放影片"><svg viewBox="0 0 24 24"><path fill="currentColor" d="M8 5v14l11-7z"/></svg></button></div>
+        <p class="yt-cap big">先認識我們：大天使是什麼樣的團隊</p>
+      </div>
+
+      <!-- 居服員現身說法 -->
+      <h3 class="vid-h reveal">聽聽夥伴怎麼說</h3>
+      <div class="yt-grid reveal">
+        <div class="vid-item"><div class="yt" data-id="BpfzDdr0X8Y"><img loading="lazy" src="https://i.ytimg.com/vi/BpfzDdr0X8Y/hqdefault.jpg" alt="羊男聊居服"><button class="yt-play" aria-label="播放影片"><svg viewBox="0 0 24 24"><path fill="currentColor" d="M8 5v14l11-7z"/></svg></button></div><p class="yt-cap">羊男聊居服</p></div>
+        <div class="vid-item"><div class="yt" data-id="GwrJYofd_dw"><img loading="lazy" src="https://i.ytimg.com/vi/GwrJYofd_dw/hqdefault.jpg" alt="我在這存到一桶金"><button class="yt-play" aria-label="播放影片"><svg viewBox="0 0 24 24"><path fill="currentColor" d="M8 5v14l11-7z"/></svg></button></div><p class="yt-cap">我在這，存到一桶金</p></div>
+        <div class="vid-item"><div class="yt" data-id="czrPX1TwFNs"><img loading="lazy" src="https://i.ytimg.com/vi/czrPX1TwFNs/hqdefault.jpg" alt="孟麗個人影片"><button class="yt-play" aria-label="播放影片"><svg viewBox="0 0 24 24"><path fill="currentColor" d="M8 5v14l11-7z"/></svg></button></div><p class="yt-cap">孟麗的故事</p></div>
+        <div class="vid-item"><div class="yt" data-id="EVJfcfysROs"><img loading="lazy" src="https://i.ytimg.com/vi/EVJfcfysROs/hqdefault.jpg" alt="我是伊琪"><button class="yt-play" aria-label="播放影片"><svg viewBox="0 0 24 24"><path fill="currentColor" d="M8 5v14l11-7z"/></svg></button></div><p class="yt-cap">我是伊琪</p></div>
+        <div class="vid-item"><div class="yt" data-id="fmHb5M3a08k"><img loading="lazy" src="https://i.ytimg.com/vi/fmHb5M3a08k/hqdefault.jpg" alt="聊天下棋喝咖啡的工作"><button class="yt-play" aria-label="播放影片"><svg viewBox="0 0 24 24"><path fill="currentColor" d="M8 5v14l11-7z"/></svg></button></div><p class="yt-cap">聊天、下棋、喝咖啡，也是工作</p></div>
+        <div class="vid-item"><div class="yt" data-id="Bcn1LM5u-ws"><img loading="lazy" src="https://i.ytimg.com/vi/Bcn1LM5u-ws/hqdefault.jpg" alt="工作大釋放"><button class="yt-play" aria-label="播放影片"><svg viewBox="0 0 24 24"><path fill="currentColor" d="M8 5v14l11-7z"/></svg></button></div><p class="yt-cap">下班一起唱歌，工作大釋放</p></div>
+      </div>
+
+      <!-- 備餐故事：門檻不高 -->
+      <h3 class="vid-h reveal">備餐，其實沒那麼難</h3>
+      <p class="vid-note reveal">做菜的不是大廚，是手腳有點鈍的一般上班族。一步一步慢慢來，照樣能把長輩照顧得好好的。這份工作的門檻，真的沒有你想的那麼高。</p>
+      <div class="yt-grid reveal">
+        <div class="vid-item"><div class="yt" data-id="Odt1zhMetZc"><img loading="lazy" src="https://i.ytimg.com/vi/Odt1zhMetZc/hqdefault.jpg" alt="媛媛備餐1"><button class="yt-play" aria-label="播放影片"><svg viewBox="0 0 24 24"><path fill="currentColor" d="M8 5v14l11-7z"/></svg></button></div><p class="yt-cap">媛媛備餐 ① 開始</p></div>
+        <div class="vid-item"><div class="yt" data-id="s7eGMFttnEA"><img loading="lazy" src="https://i.ytimg.com/vi/s7eGMFttnEA/hqdefault.jpg" alt="媛媛備餐2"><button class="yt-play" aria-label="播放影片"><svg viewBox="0 0 24 24"><path fill="currentColor" d="M8 5v14l11-7z"/></svg></button></div><p class="yt-cap">媛媛備餐 ② 動手做</p></div>
+        <div class="vid-item"><div class="yt" data-id="ZFEQ2FSDFmI"><img loading="lazy" src="https://i.ytimg.com/vi/ZFEQ2FSDFmI/hqdefault.jpg" alt="媛媛備餐3"><button class="yt-play" aria-label="播放影片"><svg viewBox="0 0 24 24"><path fill="currentColor" d="M8 5v14l11-7z"/></svg></button></div><p class="yt-cap">媛媛備餐 ③ 快完成</p></div>
+      </div>
+      <div class="video-wrap reveal">
+        <video controls preload="none" playsinline poster="care_video_poster.jpg">
+          <source src="care_video.mp4" type="video/mp4">
+          您的瀏覽器不支援影片播放，請改用 Chrome 或 Safari。
+        </video>
+        <p class="video-cap">備好了，請阿公來一起吃飯 — 這就是備餐完成的樣子</p>
+      </div>
+
     </div>
   </div>
 </section>
@@ -654,6 +701,19 @@ const io=new IntersectionObserver((es)=>{
   es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('show');io.unobserve(e.target);}});
 },{threshold:.15});
 document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+
+/* YouTube 封面：點了才把真正的播放器載進來，網頁開啟時不載入任何影片 */
+document.querySelectorAll('.yt').forEach(el=>{
+  el.addEventListener('click',()=>{
+    if(el.querySelector('iframe'))return;
+    const ifr=document.createElement('iframe');
+    ifr.src='https://www.youtube.com/embed/'+el.dataset.id+'?autoplay=1&rel=0';
+    ifr.allow='accelerometer;autoplay;clipboard-write;encrypted-media;gyroscope;picture-in-picture';
+    ifr.allowFullscreen=true;
+    el.innerHTML='';
+    el.appendChild(ifr);
+  });
+});
 </script>
 
 </body>
