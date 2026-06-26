@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>大天使的成長軌跡｜我們這一路</title>
+<meta name="description" content="大天使居家長照機構的成長故事。從幾個人的小桌，到坐不下的長桌。謝謝每一位曾經、現在、未來和我們並肩的夥伴。">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@500;700;900&family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet">
+
+<style>
+/* 設計 token 與首頁一致：金色聖光主題 */
+:root{
+  --gold:#F5A623; --gold-bright:#FFCE5C; --gold-glow:#FFE9B0; --amber-deep:#B96A0C;
+  --cream:#FFFBF2; --cream-2:#FFF4DC; --ink:#2B2114; --ink-soft:#7A6A4E; --white:#FFFFFF;
+  --shadow:0 18px 50px rgba(185,106,12,.14);
+  --serif:"Noto Serif TC",serif; --sans:"Noto Sans TC","PingFang TC","Microsoft JhengHei",sans-serif;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:var(--sans);color:var(--ink);background:var(--cream);line-height:1.85;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+h1,h2,h3{font-family:var(--serif);line-height:1.3;font-weight:900}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:1040px;margin:0 auto;padding:0 24px}
+.eyebrow{font-family:var(--sans);font-weight:700;font-size:.82rem;letter-spacing:.32em;color:var(--amber-deep);text-transform:uppercase;margin-bottom:18px}
+
+.reveal{opacity:0;transform:translateY(28px);transition:opacity .9s ease,transform .9s ease}
+.reveal.show{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}*{animation:none!important}}
+
+/* 返回首頁列 */
+.topbar{position:sticky;top:0;z-index:20;background:rgba(255,251,242,.86);backdrop-filter:blur(8px);border-bottom:1px solid rgba(185,106,12,.12)}
+.topbar .wrap{display:flex;align-items:center;justify-content:space-between;height:60px}
+.topbar .home{font-weight:700;color:var(--amber-deep);font-size:.95rem}
+.topbar .home span{font-family:var(--serif);font-weight:900;color:var(--ink)}
+.topbar .join-link{background:var(--gold);color:#fff;font-weight:700;padding:8px 18px;border-radius:999px;font-size:.9rem}
+
+/* HERO */
+.hero{position:relative;text-align:center;padding:96px 24px 70px;overflow:hidden;
+  background:radial-gradient(120% 90% at 50% -10%, var(--gold-glow) 0%, var(--cream-2) 40%, var(--cream) 72%)}
+.hero h1{font-size:clamp(2.1rem,5vw,3.4rem);margin-bottom:18px}
+.hero h1 .shine{background:linear-gradient(100deg,var(--amber-deep),var(--gold),var(--gold-bright),var(--amber-deep));-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero .lead{max-width:680px;margin:0 auto;font-size:1.08rem;color:var(--ink-soft)}
+.hero .lead b{color:var(--ink)}
+
+/* 時間軸 */
+.timeline{position:relative;padding:60px 0 30px}
+.timeline::before{content:"";position:absolute;top:0;bottom:0;left:50%;transform:translateX(-50%);width:3px;
+  background:linear-gradient(var(--gold-glow),var(--gold),var(--gold-glow))}
+.stop{position:relative;width:50%;padding:0 46px 56px;}
+.stop:nth-child(odd){left:0;text-align:right}
+.stop:nth-child(even){left:50%;text-align:left}
+.stop .dot{position:absolute;top:6px;width:18px;height:18px;border-radius:50%;background:var(--gold);
+  box-shadow:0 0 0 6px rgba(245,166,35,.18)}
+.stop:nth-child(odd) .dot{right:-9px}
+.stop:nth-child(even) .dot{left:-9px}
+.date{font-family:var(--serif);font-weight:900;color:var(--amber-deep);font-size:1.15rem;margin-bottom:10px}
+.card{background:var(--white);border-radius:18px;overflow:hidden;box-shadow:var(--shadow);display:inline-block;text-align:left;max-width:420px;width:100%}
+.card img{width:100%;height:auto}
+.card .cap{padding:16px 18px 18px}
+.card .cap h3{font-size:1.12rem;margin-bottom:6px}
+.card .cap p{color:var(--ink-soft);font-size:.96rem}
+
+/* 結尾感謝 */
+.outro{text-align:center;padding:70px 24px 90px;
+  background:radial-gradient(120% 100% at 50% 120%, var(--gold-glow) 0%, var(--cream-2) 45%, var(--cream) 75%)}
+.outro h2{font-size:clamp(1.7rem,4vw,2.5rem);margin-bottom:18px}
+.outro p{max-width:640px;margin:0 auto 12px;color:var(--ink-soft);font-size:1.05rem}
+.outro p b{color:var(--ink)}
+.cta{display:inline-block;margin-top:26px;background:var(--gold);color:#fff;font-weight:700;font-size:1.05rem;
+  padding:15px 34px;border-radius:999px;box-shadow:var(--shadow)}
+.foot{text-align:center;color:var(--ink-soft);font-size:.85rem;padding:26px 24px 40px}
+
+@media(max-width:720px){
+  .timeline::before{left:18px}
+  .stop{width:100%;left:0!important;text-align:left!important;padding:0 0 48px 48px}
+  .stop .dot{left:9px!important;right:auto!important}
+  .stop:nth-child(odd){text-align:left}
+  .card{max-width:none}
+}
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="wrap">
+    <a class="home" href="index.html">← 回<span>大天使</span>首頁</a>
+    <a class="join-link" href="index.html#join">加入我們</a>
+  </div>
+</div>
+
+<header class="hero">
+  <div class="wrap">
+    <p class="eyebrow reveal">Our Journey</p>
+    <h1 class="reveal">我們<span class="shine">這一路</span></h1>
+    <p class="lead reveal">這些年，有人加入，有人離開，有人留下。<br>
+      每一張照片裡的笑容，都是大天使的一部分。<br>
+      謝謝每一位<b>曾經、現在、未來</b>和我們並肩的夥伴。</p>
+  </div>
+</header>
+
+<section class="wrap">
+  <div class="timeline">
+
+    <div class="stop reveal"><span class="dot"></span>
+      <div class="date">2023 · 春</div>
+      <div class="card"><img src="story_2023_02.jpg" alt="早期的小團隊圍著桌子">
+        <div class="cap"><h3>一開始，我們只有幾個人</h3>
+        <p>在小小的空間裡，圍著一張桌子，談著同一個信念：把長輩照顧好，也把彼此照顧好。</p></div></div>
+    </div>
+
+    <div class="stop reveal"><span class="dot"></span>
+      <div class="date">2023 · 夏</div>
+      <div class="card"><img src="story_2023_06.jpg" alt="一起開會討論">
+        <div class="cap"><h3>邊做邊學，一起變強</h3>
+        <p>沒有人天生就會照顧。我們一起討論、一起補課，把每一個案家放在心上。</p></div></div>
+    </div>
+
+    <div class="stop reveal"><span class="dot"></span>
+      <div class="date">2023 · 夏末</div>
+      <div class="card"><img src="story_2023_08.jpg" alt="第一次大家圍爐吃飯">
+        <div class="cap"><h3>第一次圍爐</h3>
+        <p>忙完一段，大家坐下來吃頓飯。那一桌的熱鬧，是我們第一次覺得「像一家人」。</p></div></div>
+    </div>
+
+    <div class="stop reveal"><span class="dot"></span>
+      <div class="date">2023 · 秋</div>
+      <div class="card"><img src="story_2023_10.jpg" alt="跟長輩一起舉杯">
+        <div class="cap"><h3>跟長輩，一起舉杯</h3>
+        <p>我們照顧的不只是個案，是把他們當成自己的長輩。能一起舉杯，是我們的福氣。</p></div></div>
+    </div>
+
+    <div class="stop reveal"><span class="dot"></span>
+      <div class="date">2023 · 冬</div>
+      <div class="card"><img src="story_2023_12.jpg" alt="年末小聚">
+        <div class="cap"><h3>謝謝你們，撐過第一年</h3>
+        <p>第一年不容易。謝謝每一個咬著牙、留下來的人。</p></div></div>
+    </div>
+
+    <div class="stop reveal"><span class="dot"></span>
+      <div class="date">2024 · 新春</div>
+      <div class="card"><img src="story_2024_02.jpg" alt="第一次發紅包">
+        <div class="cap"><h3>第一次發紅包</h3>
+        <p>新春，老闆親手把紅包交到每個人手上。一句「辛苦了」，比什麼都重。</p></div></div>
+    </div>
+
+    <div class="stop reveal"><span class="dot"></span>
+      <div class="date">2024 · 春</div>
+      <div class="card"><img src="story_2024_04.jpg" alt="團隊變大，大合照">
+        <div class="cap"><h3>我們，變多了</h3>
+        <p>不知不覺，這張合照快站不下了。每一張新面孔，都是一份新的信任。</p></div></div>
+    </div>
+
+    <div class="stop reveal"><span class="dot"></span>
+      <div class="date">2024 · 夏</div>
+      <div class="card"><img src="story_2024_08.jpg" alt="夏夜聚餐">
+        <div class="cap"><h3>夏夜的這一桌</h3>
+        <p>工作再累，有這群人一起吃飯、一起笑，就充得回電。</p></div></div>
+    </div>
+
+    <div class="stop reveal"><span class="dot"></span>
+      <div class="date">出走走</div>
+      <div class="card"><img src="story_trip.jpg" alt="一起到海邊出遊">
+        <div class="cap"><h3>一起出去走走</h3>
+        <p>放下工作，到海邊大喊一聲。照顧別人之前，也要好好照顧自己。</p></div></div>
+    </div>
+
+    <div class="stop reveal"><span class="dot"></span>
+      <div class="date">2025 · 尾牙</div>
+      <div class="card"><img src="story_2025_01.jpg" alt="又一年尾牙">
+        <div class="cap"><h3>又一年尾牙</h3>
+        <p>桌子更長了，笑聲更響了。我們一起，把日子過成了想要的樣子。</p></div></div>
+    </div>
+
+    <div class="stop reveal"><span class="dot"></span>
+      <div class="date">2025 · 夏</div>
+      <div class="card"><img src="story_2025_07.jpg" alt="連案家一起同樂">
+        <div class="cap"><h3>連案家，一起照顧</h3>
+        <p>我們和長輩、和家屬，慢慢變成朋友。這份信任，是一天一天累積的。</p></div></div>
+    </div>
+
+    <div class="stop reveal"><span class="dot"></span>
+      <div class="date">2025 · 冬</div>
+      <div class="card"><img src="story_2025_11.jpg" alt="把溫暖傳下去">
+        <div class="cap"><h3>把溫暖，傳下去</h3>
+        <p>給夥伴的一份小禮、一句感謝。先被好好對待的人，才能好好對待別人。</p></div></div>
+    </div>
+
+    <div class="stop reveal"><span class="dot"></span>
+      <div class="date">2026 · 新年</div>
+      <div class="card"><img src="story_2026_01.jpg" alt="新夥伴加入，一起圍爐">
+        <div class="cap"><h3>新的夥伴，加入了</h3>
+        <p>桌邊多了好多年輕的臉。大天使的故事，換他們繼續寫下去。</p></div></div>
+    </div>
+
+    <div class="stop reveal"><span class="dot"></span>
+      <div class="date">2026 · 新春</div>
+      <div class="card"><img src="story_2026_02.jpg" alt="走到今天的尾牙">
+        <div class="cap"><h3>走到今天，謝謝你們</h3>
+        <p>從幾個人到一群人，從一張小桌到坐不下的長桌。這一路，因為有你們，才走得到。</p></div></div>
+    </div>
+
+  </div>
+</section>
+
+<section class="outro">
+  <div class="wrap reveal">
+    <h2>謝謝每一位，來過的夥伴</h2>
+    <p>有些人還在，有些人去了別的地方。<br>但只要你曾經穿上這件黃衣，你就永遠是大天使的一份子。</p>
+    <p><b>願你，一切都好。</b></p>
+    <a class="cta" href="index.html#join">想成為下一個故事裡的人？加入我們 →</a>
+  </div>
+</section>
+
+<p class="foot">大天使長照有限公司附設新北市私立大天使居家長照機構 ｜ 中和・永和・新店</p>
+
+<script>
+/* 捲動進場：與首頁同樣的淡入效果 */
+const io=new IntersectionObserver((es)=>{
+  es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('show');io.unobserve(e.target);}});
+},{threshold:.12});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+</script>
+
+</body>
+</html>
