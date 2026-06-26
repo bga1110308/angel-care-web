@@ -201,6 +201,10 @@ section{padding:96px 0}
   display:flex;align-items:center;justify-content:center;
 }
 .video-ph .play svg{width:24px;height:24px;color:var(--white);margin-left:3px}
+/* 居服員工作影片：直式手機影片，置中、限制高度，點了才載入 */
+.video-wrap{margin-top:28px;display:flex;flex-direction:column;align-items:center}
+.video-wrap video{width:auto;max-width:100%;max-height:520px;border-radius:18px;box-shadow:var(--shadow);background:#000}
+.video-cap{margin-top:14px;color:var(--ink-soft);font-size:.95rem;text-align:center}
 
 /* ============================================================
    活動相片牆（照片之後嵌入）
@@ -538,17 +542,20 @@ footer .small{font-size:.85rem;opacity:.7;line-height:1.9}
       <h2>我們不只是同事</h2>
       <p>過年一起包紅包、發紅包；下班一起吃飯、唱歌。照顧別人之前，我們先照顧好彼此。</p>
     </div>
-    <!-- 照片放進來時：把每個 .photo 裡的文字換成 <img src="檔名.jpg" alt="說明"> 即可 -->
+    <!-- 照片檔與 index.html 放在同一個資料夾，用相對檔名讀取。換照片時換掉同名 jpg 即可 -->
     <div class="gallery-grid reveal">
-      <div class="photo tall">過年發紅包<br>（照片待放）</div>
-      <div class="photo">聚餐合照<br>（照片待放）</div>
-      <div class="photo">唱歌同樂<br>（照片待放）</div>
-      <div class="photo">團隊活動<br>（照片待放）</div>
-      <div class="photo">日常時刻<br>（照片待放）</div>
+      <div class="photo tall"><img src="photo_hongbao.jpg" alt="尾牙發紅包，老闆親手把紅包交到夥伴手上"></div>
+      <div class="photo"><img src="photo_dinner.jpg" alt="團隊聚餐，一起圍著吃飯聊天"></div>
+      <div class="photo"><img src="photo_ktv.jpg" alt="下班一起去唱歌同樂"></div>
+      <div class="photo"><img src="photo_team.jpg" alt="大天使團隊大合照"></div>
+      <div class="photo"><img src="photo_trip.jpg" alt="夥伴一起出遊，到海邊放鬆"></div>
     </div>
-    <div class="video-ph reveal">
-      <div class="play"><svg viewBox="0 0 24 24"><path fill="currentColor" d="M8 5v14l11-7z"/></svg></div>
-      居服員拍的工作小影片，之後放這裡
+    <div class="video-wrap reveal">
+      <video controls preload="none" playsinline poster="care_video_poster.jpg">
+        <source src="care_video.mp4" type="video/mp4">
+        您的瀏覽器不支援影片播放，請改用 Chrome 或 Safari。
+      </video>
+      <p class="video-cap">居服員的日常：到長輩家備餐，再陪阿公一起吃飯</p>
     </div>
   </div>
 </section>
@@ -602,7 +609,7 @@ footer .small{font-size:.85rem;opacity:.7;line-height:1.9}
 
       <div class="card reveal">
         <h3><svg class="ic"><use href="#i-home"/></svg>服務區域</h3>
-        <p class="note">目前主要服務新北市這四區。</p>
+        <p class="note">目前主要服務新北市這三區。</p>
         <div class="area-tags">
           <span>中和</span><span>永和</span><span>新店</span>
         </div>
