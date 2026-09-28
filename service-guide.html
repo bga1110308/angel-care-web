@@ -160,6 +160,19 @@ dl.fields dd{margin-top:2px}
 .ex-grid .chat:not(.green){background:#EAF1FB}
 .ex-grid .chat:not(.green) .label{color:#0D47A1}
 
+/* 回報個案狀況的三種選擇：三張卡並排，讓員工記住「最後一句要選一種」 */
+.pick{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:10px 0 14px}
+.pick-card{position:relative;border-radius:16px;padding:16px 16px 14px;background:#fff;border:2px solid var(--line)}
+.pick-card h4{font-family:var(--serif);font-size:1.05rem;margin:6px 0 4px}
+.pick-card p{font-size:.93rem;line-height:1.7}
+.pick-no{display:inline-flex;width:28px;height:28px;border-radius:50%;align-items:center;justify-content:center;color:#fff;font-family:var(--serif);font-weight:900}
+.pick-card.p1{border-color:#BFD4F0}.pick-card.p1 .pick-no{background:#1565C0}.pick-card.p1 h4{color:#0D47A1}
+.pick-card.p2{border-color:#F5C2C0}.pick-card.p2 .pick-no{background:var(--red)}.pick-card.p2 h4{color:var(--red)}
+.pick-card.p3{border-color:#CDE8CD}.pick-card.p3 .pick-no{background:var(--green)}.pick-card.p3 h4{color:var(--green)}
+#report .chat{margin-top:10px}
+#report .chat.c1{background:#EAF1FB}#report .chat.c1 .label{color:#0D47A1}
+#report .chat.c2{background:var(--red-bg)}#report .chat.c2 .label{color:var(--red)}
+
 /* 圖片點擊放大 */
 #lb{position:fixed;inset:0;background:rgba(20,14,4,.92);display:none;align-items:center;justify-content:center;z-index:9999;padding:16px;cursor:zoom-out}
 #lb.show{display:flex}
@@ -168,7 +181,7 @@ dl.fields dd{margin-top:2px}
 
 @media(max-width:600px){
   body{font-size:16px}
-  .forms,.tpl-grid,.ex-grid{grid-template-columns:1fr}
+  .forms,.tpl-grid,.ex-grid,.pick{grid-template-columns:1fr}
   .top h1{font-size:1.7rem}
   .part{padding:22px 16px 24px}
   .part-head h2{font-size:1.22rem}
@@ -218,7 +231,12 @@ dl.fields dd{margin-top:2px}
 
     <div class="item">
       <h3><span class="no">2.</span>準備好自己的物品，也照顧別人的感受</h3>
-      <p>可以的話，帶一雙<b>自己的室內拖鞋</b>，再多準備<b>一套乾淨的換洗衣物</b>。</p>
+      <p>出門前確認包包裡有這些：</p>
+      <ul class="dots">
+        <li><b>隨身酒精和手套</b>：一定要帶，進門消毒、協助清潔或排泄時都用得到。</li>
+        <li>可以的話，帶一雙<b>自己的室內拖鞋</b>，再多準備<b>一套乾淨的換洗衣物</b>。</li>
+      </ul>
+      <p>換洗衣物特別重要的時候：</p>
       <ul class="dots">
         <li><b>夏天</b>：天氣熱容易流汗，身上味道會比較重，服務完或進下一家之前，記得擦汗、換上乾淨衣服。</li>
         <li><b>下雨、梅雨季</b>：衣服和鞋子淋濕後容易有異味，進入案家或回辦公室前先換掉，室內改穿自己的拖鞋。</li>
@@ -389,6 +407,43 @@ dl.fields dd{margin-top:2px}
         <p class="label">範例訊息</p>
         <p class="bubble">督導好，王奶奶家我 9:00 到了，按門鈴和打家屬電話都沒人接，群組也 @ 了，已等 5 分鐘，請督導協助聯絡家屬。</p>
       </div>
+    </div>
+
+    <div class="item" id="report">
+      <h3>回報個案的狀況：最後一句一定要說你要什麼</h3>
+      <p>覺得個案要你多做事、要求越來越多，或是相處不順時，一定要讓督導知道。但只講「個案一直叫我做很多事」，督導不知道你是要抱怨、要幫忙，還是不想做了，事情就卡住。</p>
+      <p class="no-say"><b>✕ 督導看不懂的寫法</b>「陳奶奶每次都叫我做很多事，好累喔。」</p>
+      <p>回報的最後一句，一定要從下面三種挑一種說清楚：</p>
+      <div class="pick">
+        <div class="pick-card p1">
+          <span class="pick-no">1</span>
+          <h4>繼續接，請督導幫我處理</h4>
+          <p>說清楚要督導做什麼，例如：幫我跟個案說明服務範圍、請個案不要再這樣。</p>
+        </div>
+        <div class="pick-card p2">
+          <span class="pick-no">2</span>
+          <h4>不想繼續接</h4>
+          <p>直接說「我不想繼續接這個案，請督導安排換人」。</p>
+        </div>
+        <div class="pick-card p3">
+          <span class="pick-no">3</span>
+          <h4>只是回報，不用處理</h4>
+          <p>讓督導知道有這件事就好，結尾寫「只是回報，不用處理」。</p>
+        </div>
+      </div>
+      <div class="chat c1">
+        <p class="label">範例 1：繼續接，請督導幫我處理</p>
+        <p class="bubble">督導好，陳奶奶這兩週每次都要我多擦窗戶、刷整間廚房，時間都超過。我還是願意繼續接，但請督導幫我跟奶奶和家屬說明服務範圍，請他們不要再加項目。</p>
+      </div>
+      <div class="chat c2">
+        <p class="label">範例 2：不想繼續接</p>
+        <p class="bubble">督導好，林伯伯這個月好幾次要我幫家人洗衣服，我跟他說明過不能做，他還是一直要求，講話也很不客氣。我不想繼續接這個案，請督導安排換人。</p>
+      </div>
+      <div class="chat">
+        <p class="label">範例 3：只是回報，不用處理</p>
+        <p class="bubble">督導好，王奶奶今天請我多幫忙收陽台的衣服，時間內做得完，我就順手做了。只是回報讓督導知道，不用處理。</p>
+      </div>
+      <p class="heart">你講清楚要什麼，督導才能馬上幫你；講不清楚，大家都困擾。</p>
     </div>
   </section>
 
