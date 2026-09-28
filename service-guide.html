@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>金牌居服員必備常識｜大天使新人專區</title>
+<meta name="description" content="大天使居家長照機構居服員必讀：服務前、服務中的注意事項，找不到個案的處理步驟、代班、請假、和督導溝通的方式，以及異動單的寫法。">
+<!-- 內部員工閱讀用，不給搜尋引擎收錄，跟 codes.html 一致 -->
+<meta name="robots" content="noindex,follow">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" href="/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@500;700;900&family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+/* 配色、字型沿用 codes.html，讓新人專區兩頁看起來是同一套 */
+:root{
+  --gold:#F5A623; --gold-bright:#FFCE5C; --gold-glow:#FFE9B0; --amber-deep:#B96A0C;
+  --cream:#FFFBF2; --cream-2:#FFF4DC; --ink:#2B2114; --ink-soft:#7A6A4E; --white:#fff;
+  --line:#F1D9A6; --red:#C62828; --red-bg:#FFF1F0; --green:#2E7D32; --green-bg:#F2FAF2;
+  --shadow:0 18px 50px rgba(185,106,12,.14);
+  --serif:"Noto Serif TC",serif; --sans:"Noto Sans TC","PingFang TC","Microsoft JhengHei",sans-serif;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:var(--sans);color:var(--ink);background:var(--cream);line-height:1.9;font-size:17px;-webkit-font-smoothing:antialiased}
+h1,h2,h3{font-family:var(--serif);line-height:1.35;font-weight:900}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+b,strong{color:var(--amber-deep)}
+.wrap{max-width:860px;margin:0 auto;padding:0 18px}
+
+/* 頁首 */
+.top{text-align:center;padding:64px 20px 44px;background:radial-gradient(120% 90% at 50% -10%,var(--gold-glow) 0%,var(--cream-2) 40%,var(--cream) 72%)}
+.top img.logo{width:76px;height:76px;border-radius:50%;margin:0 auto 18px;background:#fff;box-shadow:0 0 0 10px rgba(255,233,176,.5),0 12px 30px rgba(185,106,12,.22)}
+.eyebrow{font-weight:700;font-size:.8rem;letter-spacing:.3em;color:var(--amber-deep);margin-bottom:12px}
+.top h1{font-size:2.1rem;margin-bottom:6px}
+.top .sub{font-family:var(--serif);font-size:1.15rem;color:var(--amber-deep);margin-bottom:14px}
+.top p.lead{color:var(--ink-soft);max-width:600px;margin:0 auto}
+.btns{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin-top:22px}
+.pill{display:inline-block;background:var(--white);color:var(--amber-deep);font-weight:700;padding:10px 22px;border-radius:999px;box-shadow:var(--shadow);font-size:.95rem}
+.pill.gold{background:linear-gradient(135deg,var(--gold-bright),var(--gold));color:#fff}
+
+/* 目錄 */
+.toc{margin:30px auto 0;display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:10px}
+.toc a{display:flex;align-items:center;gap:10px;background:var(--white);border:1px solid var(--line);border-radius:14px;padding:10px 14px;font-weight:700;font-size:.93rem;box-shadow:0 4px 14px rgba(185,106,12,.07)}
+.toc a:hover{background:var(--gold-glow)}
+.toc .n{flex:none;width:28px;height:28px;border-radius:50%;background:linear-gradient(135deg,var(--gold-bright),var(--gold));color:#fff;font-family:var(--serif);display:flex;align-items:center;justify-content:center;font-size:.9rem}
+
+/* 段落卡 */
+.part{background:var(--white);border-radius:22px;box-shadow:var(--shadow);padding:28px 26px 30px;margin:30px auto 0;scroll-margin-top:16px}
+.part-head{display:flex;align-items:center;gap:14px;margin-bottom:18px;padding-bottom:16px;border-bottom:1px solid var(--cream-2)}
+.part-head .badge{flex:none;width:52px;height:52px;border-radius:14px;background:linear-gradient(135deg,var(--gold-bright),var(--gold));color:#fff;font-family:var(--serif);font-weight:900;font-size:1.3rem;display:flex;align-items:center;justify-content:center;box-shadow:0 8px 20px rgba(185,106,12,.25)}
+.part-head h2{font-size:1.4rem}
+.part-head p{color:var(--ink-soft);font-size:.92rem;line-height:1.5;margin-top:2px}
+.item{margin-top:22px}
+.item:first-of-type{margin-top:0}
+.item h3{font-size:1.12rem;margin-bottom:6px;display:flex;gap:8px;align-items:baseline}
+.item h3 .no{color:var(--gold);font-size:1rem}
+.item p{margin-bottom:8px}
+ul.dots{list-style:none;margin:8px 0}
+ul.dots li{position:relative;padding-left:20px;margin-bottom:6px}
+ul.dots li::before{content:"";position:absolute;left:4px;top:.75em;width:7px;height:7px;border-radius:50%;background:var(--gold)}
+
+/* 提醒框 */
+.note{background:#FFF7E6;border:1px dashed var(--gold);border-radius:12px;padding:12px 16px;margin-top:10px;font-size:.96rem}
+.heart{background:var(--cream-2);border-radius:12px;padding:12px 16px;margin-top:12px;font-family:var(--serif);font-weight:700;color:var(--amber-deep);text-align:center}
+.no-say{background:var(--red-bg);border-left:4px solid var(--red);border-radius:10px;padding:10px 14px;margin:8px 0;font-size:.96rem}
+.no-say b{color:var(--red)}
+
+/* 步驟 */
+ol.steps{list-style:none;counter-reset:s;margin-top:6px}
+ol.steps li{counter-increment:s;position:relative;padding:12px 14px 12px 58px;background:var(--cream);border-radius:14px;margin-bottom:10px}
+ol.steps li::before{content:counter(s);position:absolute;left:14px;top:12px;width:30px;height:30px;border-radius:50%;background:var(--amber-deep);color:#fff;font-family:var(--serif);font-weight:900;display:flex;align-items:center;justify-content:center}
+ol.steps li.last{background:#FFF0CE;border:1px solid var(--line)}
+.code-inline{display:inline-block;font-family:Consolas,monospace;background:#fff;border:1px solid var(--line);border-radius:6px;padding:0 8px;font-weight:700;color:var(--amber-deep);letter-spacing:.03em}
+
+/* 緊急／不緊急 */
+.lights{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:6px}
+.light{border-radius:16px;padding:16px 18px}
+.light h3{font-size:1.08rem;margin-bottom:6px}
+.light.red{background:var(--red-bg);border:1px solid #F5C2C0}
+.light.red h3{color:var(--red)}
+.light.green{background:var(--green-bg);border:1px solid #CDE8CD}
+.light.green h3{color:var(--green)}
+.light .tag{display:inline-block;font-size:.8rem;font-weight:700;padding:2px 10px;border-radius:999px;margin-bottom:8px;color:#fff}
+.light.red .tag{background:var(--red)}
+.light.green .tag{background:var(--green)}
+
+/* 督導時間 */
+.hours{display:flex;align-items:center;gap:14px;background:var(--cream);border-radius:14px;padding:14px 16px}
+.hours .clock{flex:none;width:46px;height:46px}
+.hours b{font-size:1.1rem}
+
+/* 請假表 */
+table.leave{width:100%;border-collapse:separate;border-spacing:0;margin:8px 0;border:1px solid var(--line);border-radius:14px;overflow:hidden}
+table.leave th,table.leave td{padding:11px 14px;text-align:left}
+table.leave th{background:linear-gradient(135deg,var(--gold-bright),var(--gold));color:#fff;font-weight:700}
+table.leave td{border-top:1px solid var(--cream-2);background:#fff}
+table.leave td:last-child{font-weight:700;color:var(--amber-deep)}
+
+/* 訊息範例：做成聊天泡泡，員工一看就知道是要傳的文字 */
+.chat{background:#E8F4E9;border-radius:16px;padding:14px;margin-top:8px}
+.chat .label{font-size:.8rem;font-weight:700;color:var(--green);margin-bottom:6px}
+.bubble{background:#fff;border-radius:14px 14px 4px 14px;padding:12px 14px;box-shadow:0 2px 8px rgba(0,0,0,.06);font-size:.97rem}
+.three{display:flex;flex-wrap:wrap;gap:8px;margin:8px 0}
+.three span{background:var(--gold-glow);color:var(--amber-deep);font-weight:700;padding:4px 12px;border-radius:999px;font-size:.93rem}
+
+.foot{text-align:center;padding:48px 20px 60px;color:var(--ink-soft);font-size:.9rem}
+.foot b{color:var(--amber-deep)}
+
+/* 異動單：藍＝異動（要改班表）、綠＝告知（班表不動），顏色跟負責人做的圖一致，員工看圖看頁面對得起來 */
+.fig{margin-top:6px}
+.fig img{width:100%;border-radius:14px;box-shadow:0 8px 24px rgba(185,106,12,.12);cursor:zoom-in}
+.fig figcaption{text-align:center;font-size:.85rem;color:var(--ink-soft);margin-top:6px}
+.ask{background:var(--cream-2);border-radius:14px;padding:14px 16px;text-align:center;font-weight:700;margin-bottom:12px}
+.ask .q{font-family:var(--serif);font-size:1.15rem;color:var(--amber-deep)}
+.forms{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.form{border-radius:16px;padding:16px 18px}
+.form h4{font-family:var(--serif);font-size:1.15rem;margin-bottom:6px}
+.form .when{display:inline-block;font-size:.85rem;font-weight:700;color:#fff;padding:2px 10px;border-radius:999px;margin-bottom:8px}
+.form.blue{background:#EEF4FC;border:1px solid #BFD4F0}
+.form.blue h4{color:#0D47A1}.form.blue .when{background:#1565C0}
+.form.green{background:var(--green-bg);border:1px solid #CDE8CD}
+.form.green h4{color:var(--green)}.form.green .when{background:var(--green)}
+dl.fields{margin-top:4px}
+dl.fields div{padding:12px 0;border-top:1px solid var(--cream-2)}
+dl.fields div:first-child{border-top:none}
+dl.fields dt{font-weight:700;font-size:1.02rem}
+dl.fields dt small{font-weight:500;color:var(--ink-soft);font-size:.85rem;margin-left:4px}
+dl.fields dd{margin-top:2px}
+.star{color:var(--red);font-weight:700}
+.tpl-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:10px}
+.tpl{border-radius:16px;overflow:hidden;background:#fff}
+.tpl.blue{border:2px solid #BFD4F0}.tpl.green{border:2px solid #CDE8CD}
+.tpl-head{display:flex;align-items:center;justify-content:space-between;padding:10px 14px;font-weight:700;color:#fff}
+.tpl.blue .tpl-head{background:#1565C0}.tpl.green .tpl-head{background:var(--green)}
+.tpl pre{margin:0;padding:14px 16px;font-family:var(--sans);font-size:1rem;line-height:1.9;white-space:pre-wrap}
+.copy{border:none;background:#fff;color:var(--ink);font-family:var(--sans);font-weight:700;font-size:.88rem;padding:6px 14px;border-radius:999px;cursor:pointer}
+.copy:active{transform:scale(.96)}
+.copy.done{background:var(--gold-glow);color:var(--amber-deep)}
+.checklist{list-style:none;margin-top:6px}
+.checklist li{position:relative;padding:10px 12px 10px 46px;background:var(--cream);border-radius:12px;margin-bottom:8px}
+.checklist li::before{content:"";position:absolute;left:14px;top:13px;width:20px;height:20px;border:2px solid var(--gold);border-radius:6px;background:#fff}
+
+/* 圖片點擊放大 */
+#lb{position:fixed;inset:0;background:rgba(20,14,4,.92);display:none;align-items:center;justify-content:center;z-index:9999;padding:16px;cursor:zoom-out}
+#lb.show{display:flex}
+#lb img{max-width:100%;max-height:100%;border-radius:10px}
+#lb .lb-hint{position:absolute;bottom:14px;left:0;right:0;text-align:center;color:rgba(255,255,255,.85);font-size:.9rem}
+
+@media(max-width:600px){
+  body{font-size:16px}
+  .forms,.tpl-grid{grid-template-columns:1fr}
+  .top h1{font-size:1.7rem}
+  .part{padding:22px 16px 24px}
+  .part-head h2{font-size:1.22rem}
+  .lights{grid-template-columns:1fr}
+}
+@media print{.btns,.toc{display:none}.part{box-shadow:none;border:1px solid var(--line);break-inside:avoid}}
+</style>
+</head>
+<body>
+
+<header class="top" id="top">
+  <img class="logo" src="favicon.png" alt="大天使 LOGO">
+  <p class="eyebrow">FOR OUR CAREGIVERS</p>
+  <h1>金牌居服員必備常識</h1>
+  <p class="sub">服務前、服務中，一定要知道的事</p>
+  <p class="lead">這一頁整理了大天使居服員每天都用得到的規矩和小撇步。第一次讀請從頭看到尾，之後遇到狀況再回來查。</p>
+  <div class="btns">
+    <a class="pill" href="index.html">← 回大天使首頁</a>
+    <a class="pill gold" href="codes.html">服務碼別與照顧圖卡 →</a>
+  </div>
+</header>
+
+<div class="wrap">
+
+  <nav class="toc" aria-label="目錄">
+    <a href="#before"><span class="n">1</span>服務前</a>
+    <a href="#during"><span class="n">2</span>服務中</a>
+    <a href="#lost"><span class="n">3</span>找不到個案</a>
+    <a href="#cover"><span class="n">4</span>幫忙代班</a>
+    <a href="#talk"><span class="n">5</span>督導與請假</a>
+    <a href="#form"><span class="n">6</span>異動單怎麼寫</a>
+  </nav>
+
+  <!-- 一、服務前 -->
+  <section class="part" id="before">
+    <div class="part-head">
+      <span class="badge">一</span>
+      <div><h2>服務前：先做好功課</h2></div>
+    </div>
+
+    <div class="item">
+      <h3><span class="no">1.</span>出門前先上 CMS 查個案資料</h3>
+      <p>先看清楚個案的狀況和病史，例如是中風、小兒麻痺還是意外受傷造成行動不便。CMS 上都有寫，不要到現場才問：</p>
+      <p class="no-say"><b>✕ 不要問</b>「您是車禍還是生病才這樣？」</p>
+      <p>這種問題會讓個案和家屬很尷尬。</p>
+    </div>
+
+    <div class="item">
+      <h3><span class="no">2.</span>準備好自己的物品，也照顧別人的感受</h3>
+      <p>可以的話，帶一雙<b>自己的室內拖鞋</b>，再多準備<b>一套乾淨的換洗衣物</b>。</p>
+      <ul class="dots">
+        <li><b>夏天</b>：天氣熱容易流汗，身上味道會比較重，服務完或進下一家之前，記得擦汗、換上乾淨衣服。</li>
+        <li><b>下雨、梅雨季</b>：衣服和鞋子淋濕後容易有異味，進入案家或回辦公室前先換掉，室內改穿自己的拖鞋。</li>
+      </ul>
+      <p class="heart">我們在別人家裡工作，乾淨清爽是基本禮貌，也是讓案家放心的第一步。</p>
+    </div>
+  </section>
+
+  <!-- 二、服務中 -->
+  <section class="part" id="during">
+    <div class="part-head">
+      <span class="badge">二</span>
+      <div><h2>服務中：禮貌先行，先聽再做，動作輕柔</h2></div>
+    </div>
+
+    <div class="item">
+      <h3><span class="no">1.</span>見到案家先打招呼，當面消毒</h3>
+      <p>進門先打招呼、自我介紹，接著拿出<b>隨身酒精</b>，跟案家說一聲「我先消毒一下」再開始服務。案家看得到你在做防護，會比較安心。</p>
+      <p class="note">說話用平常的語氣就好，不用喊「報告」，我們不是在當兵，自然有禮貌就對了。</p>
+    </div>
+
+    <div class="item">
+      <h3><span class="no">2.</span>先聽，再動手</h3>
+      <p>先問個案或家屬希望怎麼服務、有什麼習慣，了解之後再開始做。每一家的做法都不一樣，照對方的習慣來，服務才會順。</p>
+      <p class="note"><b>備餐一定要先跟案家確認做法。</b>如果遇到不合理的要求，例如步驟太繁複、服務時間內做不完，當下或事後都要回報督導，並且<b>留下文字紀錄</b>。</p>
+    </div>
+
+    <div class="item">
+      <h3><span class="no">3.</span>每個動作都要輕柔仔細</h3>
+      <p>我們在個案身上做的每一個動作，都要輕柔、仔細，不可以草率隨便。</p>
+      <ul class="dots">
+        <li><b>移位、轉位時身體一定要離地</b>：把個案確實抬起來，不可以拖著走。</li>
+        <li><b>放下手腳要輕放</b>：幫無法自理的個案服務時，手腳要扶著慢慢放下，不可以用甩的。旁邊的家屬都看在眼裡，觀感很重要。</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- 三、找不到個案 -->
+  <section class="part" id="lost">
+    <div class="part-head">
+      <span class="badge">三</span>
+      <div><h2>找不到個案怎麼辦：照順序處理</h2><p>遇到狀況先自己想辦法，這是金牌居服員的基本功。</p></div>
+    </div>
+    <ol class="steps">
+      <li><b>先確認地址</b>：核對門牌、巷弄、樓層是不是正確。</li>
+      <li><b>問問附近的人</b>：可以詢問路人、鄰居或管理員。</li>
+      <li><b>在群組通知</b>：在工作群組 @ 家屬和督導，說明你已經到了但找不到人。</li>
+      <li><b>打電話給家屬</b>：電話號碼請自己上 CMS 查。撥號時在號碼前面加 <span class="code-inline">#31#</span>，例如 <span class="code-inline">#31#0912345678</span>，這樣對方看不到你的私人手機號碼，保護你自己。</li>
+      <li class="last"><b>等 5 分鐘仍聯絡不上</b>：打電話給督導，請督導協助。</li>
+    </ol>
+  </section>
+
+  <!-- 四、代班 -->
+  <section class="part" id="cover">
+    <div class="part-head">
+      <span class="badge">四</span>
+      <div><h2>幫忙代班：事先問清楚，路線先排好</h2></div>
+    </div>
+
+    <div class="item">
+      <h3>出發前先確認</h3>
+      <ul class="dots">
+        <li>個案的習慣和服務內容</li>
+        <li>有沒有鑰匙或磁扣</li>
+        <li>鑰匙、磁扣要在<b>什麼時間、什麼地點</b>拿取和歸還，先約好</li>
+        <li>要買的餐點<b>品項和口味</b>，問清楚並記下來</li>
+      </ul>
+    </div>
+
+    <div class="item">
+      <h3>餐點要買對，不要找理由</h3>
+      <p>個案要海鮮粥，就買海鮮粥，不能用魚片粥代替。案家問起時，也不要回答：</p>
+      <p class="no-say"><b>✕ 不要說</b>「海鮮粥裡面也有魚片」</p>
+      <p>海鮮粥和魚片粥是不一樣的東西。長輩大多牙口不好，海鮮裡除了魚片，很多東西根本咬不動、吞不下，家屬點餐時早就想過了。</p>
+      <p>萬一真的買錯，<b>直接跟案家說抱歉</b>，不要解釋、不要爭辯，才不會變成客訴。</p>
+      <p class="heart">我們多一分用心，個案就多得到一分關心。</p>
+    </div>
+
+    <div class="item">
+      <h3>同時送好幾家，先訂餐、先排路線</h3>
+      <p>一次要送不只一家時：</p>
+      <ol class="steps">
+        <li>先打電話跟店家訂餐，到了直接拿，不用現場等。</li>
+        <li>出發前先排好路線，哪一家先送、哪一家後送，照順序走。</li>
+      </ol>
+      <p>路線事先排好，才不會讓長輩餓著等、餐點放涼。</p>
+    </div>
+  </section>
+
+  <!-- 五、督導與請假 -->
+  <section class="part" id="talk">
+    <div class="part-head">
+      <span class="badge">五</span>
+      <div><h2>和督導溝通：分清楚緊急和不緊急</h2></div>
+    </div>
+
+    <div class="item">
+      <div class="hours">
+        <svg class="clock" viewBox="0 0 48 48" aria-hidden="true"><circle cx="24" cy="24" r="21" fill="#FFE9B0" stroke="#F5A623" stroke-width="3"/><path d="M24 12v12l8 5" fill="none" stroke="#B96A0C" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <div><b>督導上班時間：週一到週五 9:00 到 17:00</b><br>例假日和國定假日（月曆上紅字的日子）休息。</div>
+      </div>
+    </div>
+
+    <div class="item">
+      <div class="lights">
+        <div class="light red">
+          <span class="tag">🔴 緊急</span>
+          <h3>任何時間都可以直接打電話</h3>
+          <p>只要有生命危險，不管是個案還是你自己，都不用管是不是上班時間，直接打。例如：</p>
+          <ul class="dots">
+            <li>個案跌倒、受傷、身體突然不舒服</li>
+            <li>你自己發生意外，無法去上班</li>
+            <li>到了個案家找不到人，等超過 5 分鐘仍聯絡不上</li>
+          </ul>
+        </div>
+        <div class="light green">
+          <span class="tag">🟢 不緊急</span>
+          <h3>傳文字訊息，上班時間處理</h3>
+          <p>排班調整、和個案之間的小摩擦、服務上的不順或不滿，這些不影響生命、也不急，請留文字訊息把事情說清楚，督導上班時間會協助處理。</p>
+        </div>
+      </div>
+      <p class="heart">你是專業的照顧者，不是等人照顧的人。小事先試著自己處理，真的需要幫忙時，把話說清楚，督導才幫得上。</p>
+    </div>
+
+    <div class="item">
+      <h3>請假規定：一律傳文字，不接受口頭</h3>
+      <table class="leave">
+        <thead><tr><th>請假天數</th><th>最晚什麼時候說</th></tr></thead>
+        <tbody>
+          <tr><td>1 天</td><td>盡量提前</td></tr>
+          <tr><td>超過 1 天</td><td>2 週前</td></tr>
+          <tr><td>超過 3 天</td><td>1 個月前</td></tr>
+        </tbody>
+      </table>
+      <p>一定要<b>傳文字訊息</b>請假，不可以只用講的，避免日期、時間記錯。</p>
+      <p>越早說越好。最怕的是個案連續好幾天都沒人去，案家會抗議，個管員也會關切。</p>
+    </div>
+
+    <div class="item">
+      <h3>請假先看大群，避開別人已請的時段</h3>
+      <p>督導收到請假訊息後，會公布在大群組裡。後面想請假的人，請先看一下大群，盡量避開已經有人請假的時段。</p>
+      <p>同一段時間太多人請假，個案就沒人可以去服務，大家互相體諒，排班才排得過來。</p>
+    </div>
+
+    <div class="item">
+      <h3>哪些可以調、哪些不用勉強</h3>
+      <ul class="dots">
+        <li>出國旅遊、參加活動、處理私人事務這類<b>時間可以調整的假</b>，請盡量錯開別人已請的時段。</li>
+        <li>如果是自己要開刀、家人生病住院這類<b>沒辦法改時間的事</b>，照實跟督導說就好，公司不會強求你調整。</li>
+      </ul>
+    </div>
+
+    <div class="item">
+      <h3>生病請假：講清楚是哪幾位個案</h3>
+      <p>感冒或身體不舒服想請假，請告訴督導：</p>
+      <ul class="dots">
+        <li><b>哪幾位個案</b>要請假</li>
+        <li><b>哪幾位個案</b>還可以去</li>
+      </ul>
+      <p>這樣督導才能馬上安排代班，不會影響到長輩。</p>
+    </div>
+
+    <div class="item">
+      <h3>傳訊息的寫法：講重點</h3>
+      <p>一次說完三件事：</p>
+      <div class="three"><span>哪一位個案</span><span>發生什麼事</span><span>需要督導做什麼</span></div>
+      <div class="chat">
+        <p class="label">範例訊息</p>
+        <p class="bubble">督導好，王奶奶家我 9:00 到了，按門鈴和打家屬電話都沒人接，群組也 @ 了，已等 5 分鐘，請督導協助聯絡家屬。</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 六、異動單 -->
+  <section class="part" id="form">
+    <div class="part-head">
+      <span class="badge">六</span>
+      <div><h2>異動單怎麼寫：大家講同一種話</h2><p>照格式寫，該給的資訊就不會漏，後臺一看就懂，不用再回頭問你。</p></div>
+    </div>
+
+    <div class="item">
+      <figure class="fig">
+        <img src="form_change_compare.jpg" alt="異動與異動（告知）兩張單子的欄位對照圖" loading="lazy">
+        <figcaption>點圖可以放大</figcaption>
+      </figure>
+    </div>
+
+    <div class="item">
+      <h3><span class="no">第一步</span>先決定用哪一張</h3>
+      <div class="ask">問自己一句：<span class="q">「仁寶上的班表要不要改？」</span></div>
+      <div class="forms">
+        <div class="form blue">
+          <span class="when">要改</span>
+          <h4>異動</h4>
+          <p>讓後臺知道<b>你要改班表</b>。仁寶上的班表要改成你實際的狀況，就用這張。</p>
+        </div>
+        <div class="form green">
+          <span class="when">不用改</span>
+          <h4>異動（告知）</h4>
+          <p>讓後臺知道<b>這張班表不用動</b>。你只是要回報督導，為什麼做了跟督導排班不一樣的項目。</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="item">
+      <h3><span class="no">第二步</span>看懂每個欄位</h3>
+      <dl class="fields">
+        <div><dt>日期</dt><dd>異動那一天的日期。</dd></div>
+        <div><dt>個案</dt><dd>服務的個案姓名。</dd></div>
+        <div><dt>督導排班時間<small>（班表時間）</small></dt><dd>督導當時排給你的時間，也就是<b>仁寶上的排班時間</b>。</dd></div>
+        <div><dt>修改打卡時間<small>（打卡時間）</small></dt><dd>你<b>實際到達案家、離開案家</b>的時間。<br><span class="star">★ 一定要符合所申報碼別該有的時數</span>，例如 BA02、BA13、BA15、BA18、BA20 一定要滿 30 分鐘。</dd></div>
+        <div><dt>修改服務項目</dt><dd>你實際執行的服務項目。例：原排 BA02 → 修改為 BA15。</dd></div>
+        <div><dt>修改服務紀錄內容<small>（備註）</small></dt><dd>就是<b>仁寶打卡時的「備註」</b>，也就是填服務紀錄內容的地方。<br>後臺會把你寫的<b>整份複製</b>，蓋掉你原本在仁寶備註裡的內容，所以要寫完整，不能只寫改掉的那一句。</dd></div>
+        <div><dt>說明</dt><dd>為什麼要改班表，或為什麼做了跟督導排的班不一樣的服務。</dd></div>
+      </dl>
+    </div>
+
+    <div class="item">
+      <h3><span class="no">第三步</span>複製格式，只填要改的</h3>
+      <p><b>日期、個案、督導排班時間、說明</b>每次都要寫。其他「修改」開頭的欄位，<b>有改才寫</b>，沒改的那一行可以不寫。</p>
+      <p>按「複製」後，到 LINE 貼上再填就好。</p>
+      <div class="tpl-grid">
+        <div class="tpl blue">
+          <div class="tpl-head">異動<button class="copy" type="button" data-target="tpl-a">複製</button></div>
+<pre id="tpl-a">異動
+日期：
+個案：
+督導排班時間：
+修改打卡時間：
+修改服務項目：
+修改服務紀錄內容：
+說明：</pre>
+        </div>
+        <div class="tpl green">
+          <div class="tpl-head">異動（告知）<button class="copy" type="button" data-target="tpl-b">複製</button></div>
+<pre id="tpl-b">異動（告知）
+日期：
+個案：
+督導排班時間：
+修改的服務項目：
+說明：</pre>
+        </div>
+      </div>
+    </div>
+
+    <div class="item">
+      <h3><span class="no">範例</span>寫好的樣子</h3>
+      <figure class="fig">
+        <img src="form_change_example.jpg" alt="異動單填寫範例圖" loading="lazy">
+        <figcaption>點圖可以放大</figcaption>
+      </figure>
+      <div class="chat">
+        <p class="label">範例一：異動（忘記打卡，要改打卡時間）</p>
+<p class="bubble" style="white-space:pre-line">異動
+日期：114/08/29
+個案：王○○
+督導排班時間：08:30～09:00 BA02
+修改打卡時間：08:25～08:55 BA02
+修改服務紀錄內容：協助個案起床、盥洗；測量血壓 128/72mmHg；協助早餐、服藥；環境整理（客廳、房間）
+說明：上班忘記打卡，想起來後立即補打上班卡，並依實際到案時間申請異動。</p>
+      </div>
+      <div class="chat">
+        <p class="label">範例二：異動（告知）（班表不動，回報做了不同服務）</p>
+<p class="bubble" style="white-space:pre-line">異動（告知）
+日期：114/08/29
+個案：王○○
+督導排班時間：10:00～11:00 BA20
+修改的服務項目：原排 BA20 → 實際執行 BA15
+說明：個案臨時需求改變，需提供不同服務內容。</p>
+      </div>
+    </div>
+
+    <div class="item">
+      <h3><span class="no">送出前</span>自己檢查一遍</h3>
+      <ul class="checklist">
+        <li>選對單子了嗎？班表要改用「異動」，不用改用「異動（告知）」</li>
+        <li>日期、個案、督導排班時間、說明都有寫</li>
+        <li>打卡時間有滿該碼別的時數（BA02、BA13、BA15、BA18、BA20 要滿 30 分鐘）</li>
+        <li>服務紀錄內容寫完整，不是只寫改掉的那一句</li>
+        <li>說明有把原因講清楚</li>
+      </ul>
+    </div>
+  </section>
+
+</div>
+
+<footer class="foot">
+  <p><b>大天使居家長照機構</b>　服務區域：中和・永和・新店</p>
+  <p>電話 0970532222　LINE ID：biganglee</p>
+  <div class="btns">
+    <a class="pill" href="#top">↑ 回到最上面</a>
+    <a class="pill gold" href="codes.html">服務碼別與照顧圖卡 →</a>
+  </div>
+</footer>
+
+<!-- 圖片放大：手機上看圖字太小，點一下放大，點畫面或按 Esc 關閉 -->
+<div id="lb" aria-hidden="true"><img alt="放大檢視"><span class="lb-hint">點畫面任一處或按 Esc 關閉</span></div>
+<script>
+(function(){
+  var lb=document.getElementById('lb'), lbimg=lb.querySelector('img');
+  document.querySelectorAll('.fig img').forEach(function(im){
+    im.addEventListener('click',function(){ lbimg.src=im.src; lb.classList.add('show'); });
+  });
+  function close(){ lb.classList.remove('show'); lbimg.removeAttribute('src'); }
+  lb.addEventListener('click',close);
+  document.addEventListener('keydown',function(e){ if(e.key==='Escape') close(); });
+})();
+
+// 複製格式：員工直接貼到 LINE 填寫，避免自己打漏欄位
+(function(){
+  function fallback(text){
+    var ta=document.createElement('textarea'); ta.value=text; ta.style.position='fixed'; ta.style.opacity='0';
+    document.body.appendChild(ta); ta.select(); document.execCommand('copy'); document.body.removeChild(ta);
+  }
+  document.querySelectorAll('.copy').forEach(function(btn){
+    btn.addEventListener('click',function(){
+      var text=document.getElementById(btn.dataset.target).textContent;
+      var done=function(){ btn.textContent='已複製 ✓'; btn.classList.add('done');
+        setTimeout(function(){ btn.textContent='複製'; btn.classList.remove('done'); },2000); };
+      if(navigator.clipboard&&window.isSecureContext){ navigator.clipboard.writeText(text).then(done,function(){ fallback(text); done(); }); }
+      else { fallback(text); done(); }
+    });
+  });
+})();
+</script>
+
+</body>
+</html>
