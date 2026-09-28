@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>服務規範及違規責任｜大天使居服員必讀</title>
+<meta name="description" content="大天使居家長照機構居服員服務規範：防護、保密與專業界線、打卡與申報，以及違規的法律與違約責任。">
+<!-- 內部員工閱讀用，不給搜尋引擎收錄，跟 codes.html、service-guide.html 一致 -->
+<meta name="robots" content="noindex,follow">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" href="/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@500;700;900&family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+/* 配色、字型沿用新人專區兩頁；四組規定各一個顏色，員工看顏色就知道是哪一類 */
+:root{
+  --gold:#F5A623; --gold-bright:#FFCE5C; --gold-glow:#FFE9B0; --amber-deep:#B96A0C;
+  --cream:#FFFBF2; --cream-2:#FFF4DC; --ink:#2B2114; --ink-soft:#7A6A4E; --white:#fff; --line:#F1D9A6;
+  --red:#C62828; --red-bg:#FFF1F0; --red-line:#F5C2C0;
+  --ok:#2E7D32; --ok-bg:#F2FAF2;
+  --g1:#00897B; --g1-bg:#E9F7F5; --g1-line:#B7E3DC;   /* 防護 */
+  --g2:#5E35B1; --g2-bg:#F3EFFB; --g2-line:#D5C9F0;   /* 保密與界線 */
+  --g3:#E65100; --g3-bg:#FFF3E6; --g3-line:#FBD3AE;   /* 打卡與申報 */
+  --g4:#C62828; --g4-bg:#FFF1F0; --g4-line:#F5C2C0;   /* 違規責任 */
+  --shadow:0 18px 50px rgba(185,106,12,.14);
+  --serif:"Noto Serif TC",serif; --sans:"Noto Sans TC","PingFang TC","Microsoft JhengHei",sans-serif;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:var(--sans);color:var(--ink);background:var(--cream);line-height:1.9;font-size:17px;-webkit-font-smoothing:antialiased}
+h1,h2,h3,h4{font-family:var(--serif);line-height:1.35;font-weight:900}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:880px;margin:0 auto;padding:0 18px}
+
+/* 頁首 */
+.top{text-align:center;padding:64px 20px 40px;background:radial-gradient(120% 90% at 50% -10%,#FFE3E0 0%,var(--cream-2) 42%,var(--cream) 74%)}
+.top img.logo{width:76px;height:76px;border-radius:50%;margin:0 auto 18px;display:block;box-shadow:0 0 0 10px rgba(255,233,176,.5),0 12px 30px rgba(185,106,12,.22)}
+.eyebrow{font-weight:700;font-size:.8rem;letter-spacing:.3em;color:var(--red);margin-bottom:12px}
+.top h1{font-size:2.1rem;margin-bottom:10px}
+.top p.lead{color:var(--ink-soft);max-width:600px;margin:0 auto}
+.top p.lead b{color:var(--red)}
+.btns{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin-top:22px}
+.pill{display:inline-block;background:var(--white);color:var(--amber-deep);font-weight:700;padding:10px 22px;border-radius:999px;box-shadow:var(--shadow);font-size:.95rem}
+.pill.gold{background:linear-gradient(135deg,var(--gold-bright),var(--gold));color:#fff}
+
+/* 十條總覽 */
+.overview{margin-top:30px}
+.overview h2,.group-title{font-size:1.35rem;text-align:center;margin-bottom:6px}
+.sub{text-align:center;color:var(--ink-soft);font-size:.95rem;margin-bottom:16px}
+.ov-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}
+.ov{display:flex;align-items:center;gap:12px;background:#fff;border-radius:14px;padding:12px 14px;border-left:5px solid;box-shadow:0 4px 14px rgba(0,0,0,.05);font-weight:700;font-size:.97rem;line-height:1.5}
+.ov .ic{flex:none;font-size:1.5rem}
+.ov .no{flex:none;font-family:var(--serif);font-weight:900;font-size:.85rem;color:#fff;width:24px;height:24px;border-radius:50%;display:flex;align-items:center;justify-content:center}
+.ov.g1{border-color:var(--g1)}.ov.g1 .no{background:var(--g1)}
+.ov.g2{border-color:var(--g2)}.ov.g2 .no{background:var(--g2)}
+.ov.g3{border-color:var(--g3)}.ov.g3 .no{background:var(--g3)}
+.ov.g4{border-color:var(--g4)}.ov.g4 .no{background:var(--g4)}
+.ov:hover{transform:translateY(-1px)}
+
+/* 分組 */
+.group{margin-top:44px;scroll-margin-top:16px}
+.group-head{display:flex;align-items:center;gap:12px;border-radius:16px;padding:14px 18px;color:#fff;margin-bottom:14px}
+.group-head .gi{font-size:1.7rem}
+.group-head h2{font-size:1.3rem}
+.group-head p{font-size:.9rem;opacity:.92;line-height:1.5}
+.group.g1 .group-head{background:linear-gradient(135deg,#26A69A,var(--g1))}
+.group.g2 .group-head{background:linear-gradient(135deg,#7E57C2,var(--g2))}
+.group.g3 .group-head{background:linear-gradient(135deg,#FB8C00,var(--g3))}
+.group.g4 .group-head{background:linear-gradient(135deg,#E53935,var(--g4))}
+
+/* 單條規定 */
+.rule{background:#fff;border-radius:20px;box-shadow:var(--shadow);padding:22px 22px 18px;margin-bottom:16px;border-top:5px solid;scroll-margin-top:16px}
+.g1 .rule{border-color:var(--g1)}.g2 .rule{border-color:var(--g2)}.g3 .rule{border-color:var(--g3)}.g4 .rule{border-color:var(--g4)}
+.rule-head{display:flex;align-items:center;gap:12px;margin-bottom:8px}
+.rule-no{flex:none;font-family:var(--serif);font-weight:900;color:#fff;width:40px;height:40px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:1.1rem}
+.g1 .rule-no{background:var(--g1)}.g2 .rule-no{background:var(--g2)}.g3 .rule-no{background:var(--g3)}.g4 .rule-no{background:var(--g4)}
+.rule-head h3{font-size:1.25rem}
+.key{font-weight:700;font-size:1.05rem;margin-bottom:10px}
+.dos{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:10px 0}
+.do,.dont{border-radius:14px;padding:12px 14px;font-size:.96rem}
+.do{background:var(--ok-bg);border:1px solid #CDE8CD}
+.dont{background:var(--red-bg);border:1px solid var(--red-line)}
+.do h4,.dont h4{font-family:var(--sans);font-size:.92rem;margin-bottom:4px}
+.do h4{color:var(--ok)}.dont h4{color:var(--red)}
+.do ul,.dont ul{list-style:none}
+.do li,.dont li{position:relative;padding-left:18px;margin-bottom:3px;line-height:1.7}
+.do li::before{content:"✓";position:absolute;left:0;color:var(--ok);font-weight:700}
+.dont li::before{content:"✕";position:absolute;left:0;color:var(--red);font-weight:700}
+.alert{background:#FFF7E6;border:1px dashed var(--gold);border-radius:12px;padding:10px 14px;margin:10px 0;font-size:.96rem}
+.alert b{color:var(--amber-deep)}
+
+/* 完整條文：原文一字不改，收在展開區，想細看的人點開 */
+details.full{margin-top:10px;border-top:1px dashed var(--line);padding-top:10px}
+details.full summary{cursor:pointer;font-weight:700;color:var(--amber-deep);font-size:.93rem;list-style:none;display:inline-flex;align-items:center;gap:6px}
+details.full summary::-webkit-details-marker{display:none}
+details.full summary::before{content:"▸";transition:transform .15s}
+details.full[open] summary::before{transform:rotate(90deg)}
+details.full .txt{background:var(--cream);border-radius:12px;padding:12px 16px;margin-top:8px;font-size:.95rem;color:#4a3d29}
+details.full .txt p+p{margin-top:8px}
+details.full ol{padding-left:1.4em;margin-top:6px}
+
+/* 違規責任：一條後果一行，紅色系 */
+.cons{list-style:none;counter-reset:c;margin-top:6px}
+.cons li{counter-increment:c;position:relative;background:var(--red-bg);border:1px solid var(--red-line);border-radius:12px;padding:10px 14px 10px 50px;margin-bottom:8px;font-size:.97rem;line-height:1.7}
+.cons li::before{content:counter(c);position:absolute;left:12px;top:10px;width:26px;height:26px;border-radius:50%;background:var(--red);color:#fff;font-weight:700;font-family:var(--serif);display:flex;align-items:center;justify-content:center;font-size:.85rem}
+.cons li b{color:var(--red)}
+.trig{background:#fff;border:2px solid var(--red-line);border-radius:14px;padding:12px 16px;margin-bottom:10px}
+.trig h4{color:var(--red);font-size:1rem;margin-bottom:4px}
+
+/* 結尾：不確定就找督導 */
+.cta{margin:44px auto 0;background:linear-gradient(135deg,var(--gold-bright),var(--gold));border-radius:22px;padding:26px 22px;text-align:center;color:#fff;box-shadow:var(--shadow)}
+.cta h2{font-size:1.35rem;margin-bottom:8px}
+.cta p{max-width:560px;margin:0 auto}
+.cta .contact{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin-top:16px}
+.cta .contact a,.cta .contact span{background:#fff;color:var(--amber-deep);font-weight:700;padding:10px 20px;border-radius:999px}
+
+.foot{text-align:center;padding:40px 20px 60px;color:var(--ink-soft);font-size:.9rem}
+.foot b{color:var(--amber-deep)}
+
+@media(max-width:600px){
+  body{font-size:16px}
+  .top h1{font-size:1.65rem}
+  .ov-grid,.dos{grid-template-columns:1fr}
+  .rule{padding:18px 16px 14px}
+}
+@media print{.btns,.overview{display:none}details.full{display:block}details.full .txt{display:block}.rule{box-shadow:none;break-inside:avoid}}
+</style>
+</head>
+<body>
+
+<header class="top" id="top">
+  <img class="logo" src="favicon.png" alt="大天使 LOGO">
+  <p class="eyebrow">SERVICE RULES</p>
+  <h1>服務規範及違規責任</h1>
+  <p class="lead">請所有居服員<b>確實遵守</b>以下十條規定。每一條都附上完整條文，點「展開看完整條文」就能看到。</p>
+  <div class="btns">
+    <a class="pill" href="index.html">← 回大天使首頁</a>
+    <a class="pill gold" href="service-guide.html">金牌居服員必備常識 →</a>
+  </div>
+</header>
+
+<div class="wrap">
+
+  <!-- 十條總覽：一眼掃完，點了跳到該條 -->
+  <section class="overview">
+    <h2>十條規定總覽</h2>
+    <p class="sub">點任一條，直接跳到說明</p>
+    <div class="ov-grid">
+      <a class="ov g1" href="#r1"><span class="no">1</span><span class="ic">🧤</span>洗澡、碰排泄物或體液，全程戴手套</a>
+      <a class="ov g1" href="#r2"><span class="no">2</span><span class="ic">😷</span>進門到離開，全程戴好口罩</a>
+      <a class="ov g2" href="#r3"><span class="no">3</span><span class="ic">🤐</span>不談其他個案，也不談同事</a>
+      <a class="ov g2" href="#r4"><span class="no">4</span><span class="ic">🗂️</span>團督內容不外傳、不亂轉述</a>
+      <a class="ov g2" href="#r5"><span class="no">5</span><span class="ic">📵</span>不跟案家私下交換聯絡方式</a>
+      <a class="ov g2" href="#r6"><span class="no">6</span><span class="ic">🙊</span>不跟案家講自己的私事</a>
+      <a class="ov g3" href="#r7"><span class="no">7</span><span class="ic">⏱️</span>服務滿時數，不提前離開</a>
+      <a class="ov g3" href="#r8"><span class="no">8</span><span class="ic">📍</span>嚴禁不實定位或打卡紀錄</a>
+      <a class="ov g4" href="#r9"><span class="no">9</span><span class="ic">⚖️</span>浮報、申報不實要負法律責任</a>
+      <a class="ov g4" href="#r10"><span class="no">10</span><span class="ic">🔒</span>洩漏個資要負法律責任</a>
+    </div>
+  </section>
+
+  <!-- 第一組：防護 -->
+  <section class="group g1" id="g-protect">
+    <div class="group-head"><span class="gi">🧤</span><div><h2>防護</h2><p>保護個案，也保護你自己</p></div></div>
+
+    <article class="rule" id="r1">
+      <div class="rule-head"><span class="rule-no">一</span><h3>協助洗澡務必戴手套</h3></div>
+      <p class="key">洗澡、清潔私密處、處理排泄物，或碰到體液時，全程戴手套。</p>
+      <div class="dos">
+        <div class="do"><h4>要這樣做</h4><ul><li>服務完成立刻丟掉手套</li><li>丟完馬上清潔雙手</li></ul></div>
+        <div class="dont"><h4>不可以</h4><ul><li>手套重複使用</li><li>做到一半才戴、或中途拿掉</li></ul></div>
+      </div>
+      <details class="full"><summary>展開看完整條文</summary><div class="txt">
+        <p>協助個案沐浴、清潔私密處、處理排泄物或接觸體液時，必須全程配戴手套。服務完成後立即丟棄並清潔雙手，不可重複使用。</p>
+      </div></details>
+    </article>
+
+    <article class="rule" id="r2">
+      <div class="rule-head"><span class="rule-no">二</span><h3>服務期間務必戴口罩</h3></div>
+      <p class="key">從進入案家到服務結束，全程戴口罩，而且要遮住口鼻。</p>
+      <div class="dos">
+        <div class="do"><h4>要這樣做</h4><ul><li>口罩確實蓋住嘴巴和鼻子</li></ul></div>
+        <div class="dont"><h4>不可以因為這些原因拿下</h4><ul><li>天氣太熱</li><li>跟個案很熟</li><li>個案沒有要求</li></ul></div>
+      </div>
+      <details class="full"><summary>展開看完整條文</summary><div class="txt">
+        <p>進入案家至服務結束，全程正確配戴口罩，口罩須遮住口鼻。不可因為天氣熱、與個案熟悉或個案沒有要求，就自行拿下口罩。</p>
+      </div></details>
+    </article>
+  </section>
+
+  <!-- 第二組：保密與專業界線 -->
+  <section class="group g2" id="g-privacy">
+    <div class="group-head"><span class="gi">🔒</span><div><h2>保密與專業界線</h2><p>在案家聽到、看到的，只用在服務上</p></div></div>
+
+    <article class="rule" id="r3">
+      <div class="rule-head"><span class="rule-no">三</span><h3>不得談論其他個案或公司同事</h3></div>
+      <p class="key">跟個案、家屬聊天時，不提其他個案，也不提公司同事。</p>
+      <div class="dos">
+        <div class="dont"><h4>其他個案或家屬的</h4><ul><li>姓名、住址、病情</li><li>家庭狀況、服務內容</li><li>發生過的事情</li></ul></div>
+        <div class="dont"><h4>公司同事的</h4><ul><li>個人資料、工作表現</li><li>排班、薪資</li><li>私人事情</li></ul></div>
+      </div>
+      <p class="alert"><b>沒講全名也算：</b>只要聽得出是誰，就可能構成個資洩漏。工作中知道的事，<b>離職後也要保密</b>。</p>
+      <details class="full"><summary>展開看完整條文</summary><div class="txt">
+        <p>與個案及家屬聊天時，不得提及其他個案或家屬的姓名、住址、病情、家庭狀況、服務內容及發生的事情；也不得談論公司其他同事的個人資料、工作表現、排班、薪資或私人事情。</p>
+        <p>即使沒有說出完整姓名，只要談話內容足以讓人辨認出是誰，也可能構成個人資料洩漏。工作中得知的資料只能用於執行服務，離職後仍須保密。</p>
+      </div></details>
+    </article>
+
+    <article class="rule" id="r4">
+      <div class="rule-head"><span class="rule-no">四</span><h3>不得向案家錯誤轉述團體督導內容</h3></div>
+      <p class="key">團督是大家一起找出更好的服務方法，不是聚在一起抱怨個案。團督內容不外傳。</p>
+      <div class="dos">
+        <div class="do"><h4>團督的目的</h4><ul><li>把服務中遇到的困難提出來</li><li>督導協助找出適當的處理方式</li><li>提升服務品質</li></ul></div>
+        <div class="dont"><h4>不可以對案家說</h4><ul><li>「公司團督都在抱怨個案」</li><li>「大家都有在討論你」</li><li>轉述團督裡的個案內容</li></ul></div>
+      </div>
+      <details class="full"><summary>展開看完整條文</summary><div class="txt">
+        <p>團體督導是將服務中遇到的困難提出來討論，由督導協助大家找出適當的處理方式，目的是提升服務品質，並不是聚在一起抱怨或批評個案。</p>
+        <p>不得向個案或家屬說「公司團督都在抱怨個案」、「大家都有在討論你」或轉述團督中的個案內容。團督內容涉及服務及個案隱私，未經公司同意不得向外透露。</p>
+      </div></details>
+    </article>
+
+    <article class="rule" id="r5">
+      <div class="rule-head"><span class="rule-no">五</span><h3>不得與案家私下交換聯絡方式</h3></div>
+      <p class="key">不加案家的私人聯絡方式，不私下往來。案家有需求，請他們直接找督導。</p>
+      <div class="dos">
+        <div class="do"><h4>案家有這些需求時</h4><ul><li>調班、請假、增加服務</li><li>反映問題或其他需求</li><li>一律請案家<b style="color:var(--ok)">直接聯繫督導</b></li></ul></div>
+        <div class="dont"><h4>不可以</h4><ul><li>交換私人電話、LINE、FB、IG 或其他社群</li><li>私下聯繫、接私下委託</li><li>借錢、代購非服務物品</li><li>自己私下答應或安排</li></ul></div>
+      </div>
+      <details class="full"><summary>展開看完整條文</summary><div class="txt">
+        <p>不得私自與個案或家屬交換私人電話、LINE、Facebook、Instagram或其他社群帳號，也不得私下聯繫、接受私下委託、金錢借貸、代購非服務物品或進行與機構無關的往來。</p>
+        <p>如案家有調班、請假、增加服務、反映問題或其他需求，應請案家直接聯繫督導，不得由居服員私下承諾或安排。</p>
+      </div></details>
+    </article>
+
+    <article class="rule" id="r6">
+      <div class="rule-head"><span class="rule-no">六</span><h3>不得向案家談論自己的私事</h3></div>
+      <p class="key">聊天以個案為主，保持專業界線，不要讓案家承擔你的私人問題。</p>
+      <div class="dos">
+        <div class="do"><h4>可以</h4><ul><li>一般生活問候</li><li>適度陪個案聊天</li></ul></div>
+        <div class="dont"><h4>不可以</h4><ul><li>講自己的家庭、感情、婚姻</li><li>講財務、債務</li><li>講同事衝突、抱怨工作</li><li>向案家借錢、要幫忙或要安慰</li></ul></div>
+      </div>
+      <details class="full"><summary>展開看完整條文</summary><div class="txt">
+        <p>服務期間不得向個案或家屬訴說自己的家庭、感情、婚姻、財務、債務、同事衝突、工作抱怨或其他私人事情，也不得要求案家提供協助、借錢或情緒安慰。</p>
+        <p>可以進行一般生活問候及適度陪伴聊天，但內容應以個案為主，並維持專業界線，不要讓案家承擔居服員的私人問題。</p>
+      </div></details>
+    </article>
+  </section>
+
+  <!-- 第三組：打卡與申報 -->
+  <section class="group g3" id="g-clock">
+    <div class="group-head"><span class="gi">⏱️</span><div><h2>打卡與申報</h2><p>申報多少時間，就要實際做滿多少時間</p></div></div>
+
+    <article class="rule" id="r7">
+      <div class="rule-head"><span class="rule-no">七</span><h3>服務時間必須確實，不得提前離開</h3></div>
+      <p class="key">申報多少服務時間，就要實際服務滿多少時間。</p>
+      <div class="dos">
+        <div class="dont" style="grid-column:1/-1"><h4>不可以提早離開案家，在這些地方等時間到再打卡</h4><ul><li>大廳、樓梯間、騎樓</li><li>停車場、案家門口</li></ul></div>
+      </div>
+      <p class="alert"><b>會有不定期查核：</b>主管機關可能訪查案家、核對服務紀錄、打卡地點和時間。<b>手機上的打卡時間看起來正常，但跟實際服務不符，一樣可能被認定為浮報。</b></p>
+      <details class="full"><summary>展開看完整條文</summary><div class="txt">
+        <p>申報多少服務時間，就必須實際服務滿多少時間。服務尚未結束，不得提前離開案家後，在大廳、樓梯間、騎樓、停車場或案家門口等待下班時間再打卡。</p>
+        <p>主管機關或受委託單位可進行不定期查核，包括訪查案家、核對服務紀錄、打卡地點、打卡時間及相關電子資料。即使手機顯示的打卡時間正常，只要與實際服務情形不符，仍可能被認定為浮報或申報不實。</p>
+      </div></details>
+    </article>
+
+    <article class="rule" id="r8">
+      <div class="rule-head"><span class="rule-no">八</span><h3>嚴禁製造不實定位或打卡紀錄</h3></div>
+      <p class="key">不用任何方法改動定位或打卡時間。打卡有問題，馬上找督導。</p>
+      <div class="dos">
+        <div class="do"><h4>定位或網路異常時</h4><ul><li>立刻通知督導</li><li>依規定辦理異動</li></ul></div>
+        <div class="dont"><h4>嚴禁</h4><ul><li>虛擬定位工具、會影響定位的打卡程式</li><li>故意關網路、改手機時間</li><li>變更定位、故意延後上傳</li><li>自己用其他方式改紀錄或補紀錄</li></ul></div>
+      </div>
+      <p class="alert"><b>每次操作都有紀錄：</b>打卡系統後台可能保留定位、操作、修改和實際上傳時間，查核時主管機關可以調出來。<b>不要以為手機畫面上時間正確就沒事。</b></p>
+      <details class="full"><summary>展開看完整條文</summary><div class="txt">
+        <p>請勿使用任何會影響定位正確性的打卡程式、虛擬定位工具或其他方式，也不得故意關閉網路、修改手機時間、變更定位或延後上傳，以製造看似正常的打卡紀錄。</p>
+        <p>打卡系統的後台可能保留定位、操作、修改及實際連線上傳時間等資料。主管機關查核時，可以要求機構或系統公司提出相關紀錄。不要以為手機畫面上的時間正確就沒有問題，電子打卡的每次操作都可能留下紀錄。</p>
+        <p>如因定位或網路異常無法正常打卡，應立即通知督導並依規定辦理異動，不得自行使用其他方式更改或補製紀錄。</p>
+      </div></details>
+    </article>
+  </section>
+
+  <!-- 第四組：違規責任（法律內容照負責人提供原文，不改寫數字與罪名） -->
+  <section class="group g4" id="g-liability">
+    <div class="group-head"><span class="gi">⚖️</span><div><h2>違規責任</h2><p>違反規定的後果，請務必看清楚</p></div></div>
+
+    <article class="rule" id="r9">
+      <div class="rule-head"><span class="rule-no">九</span><h3>浮報、申報不實的法律及違約責任</h3></div>
+      <div class="trig">
+        <h4>這些情況都可能被認定為虛報、浮報或申報不實</h4>
+        <p>實際沒有服務、沒有服務滿規定時間、提前離開卻申報完整時數，或用不實的定位、時間、紀錄申報費用。</p>
+      </div>
+      <p class="key">經查證後，可能產生以下責任：</p>
+      <ol class="cons">
+        <li>該筆服務費用<b>不予支付</b>；已經領取者，將被<b>追償或扣回</b>。</li>
+        <li>依新北市政府長照特約契約，除追回已領取的款項外，得視違規期間及情節，加計追償金額<b>五倍至十倍的違約金</b>。</li>
+        <li>特約期間內<b>重複發生</b>同類情形者，得加計追償金額<b>十倍至二十倍的違約金</b>。</li>
+        <li>機構可能遭違約記點、<b>停止派案、終止部分或全部特約</b>。</li>
+        <li>如涉及故意製作不實紀錄或藉此領取服務費用，可能涉及<b>刑法詐欺、偽造文書或使公務員登載不實</b>等刑事責任，實際罪責由司法機關依個案事證認定。</li>
+        <li>公司將依工作規則、勞動契約及實際情節進行個別督導、書面告誡或其他必要處理；造成公司遭追償、裁罰或其他損害者，<b>另依法釐清責任</b>。</li>
+      </ol>
+      <details class="full"><summary>展開看完整條文</summary><div class="txt">
+        <p>若實際未服務、未服務滿規定時間、提前離開卻申報完整時數，或以不實定位、時間及紀錄申報費用，可能被認定為虛報、浮報或申報不實。</p>
+        <p>經查證後，可能產生以下責任：</p>
+        <ol>
+          <li>該筆服務費用不予支付；已經領取者，將被追償或扣回。</li>
+          <li>依新北市政府長照特約契約，除追回已領取的款項外，得視違規期間及情節，加計追償金額五倍至十倍的違約金。</li>
+          <li>特約期間內重複發生同類情形者，得加計追償金額十倍至二十倍的違約金。</li>
+          <li>機構可能遭違約記點、停止派案、終止部分或全部特約。</li>
+          <li>如涉及故意製作不實紀錄或藉此領取服務費用，可能涉及刑法詐欺、偽造文書或使公務員登載不實等刑事責任，實際罪責由司法機關依個案事證認定。</li>
+          <li>公司將依工作規則、勞動契約及實際情節進行個別督導、書面告誡或其他必要處理；造成公司遭追償、裁罰或其他損害者，另依法釐清責任。</li>
+        </ol>
+      </div></details>
+    </article>
+
+    <article class="rule" id="r10">
+      <div class="rule-head"><span class="rule-no">十</span><h3>違反個資及保密規定的責任</h3></div>
+      <div class="trig">
+        <h4>這種情況可能違反《個人資料保護法》</h4>
+        <p>沒有經過同意，就向案家或其他人透露個案、家屬或同事的資料。</p>
+      </div>
+      <p class="key">依實際情形，可能產生以下責任：</p>
+      <ol class="cons">
+        <li>公司將依工作規則進行提醒、書面告誡、個別督導或其他必要處理。</li>
+        <li>若造成當事人權益受損，當事人可依法<b>請求損害賠償</b>。</li>
+        <li>若有為自己或他人取得不法利益，或損害他人利益的意圖，且足以造成他人損害，最重可處<b>五年以下有期徒刑</b>，並得併科<b>新臺幣一百萬元以下罰金</b>。</li>
+      </ol>
+      <details class="full"><summary>展開看完整條文</summary><div class="txt">
+        <p>未經同意向案家或他人透露個案、家屬或同事資料，可能違反《個人資料保護法》，並依實際情形產生以下責任：</p>
+        <ol>
+          <li>公司將依工作規則進行提醒、書面告誡、個別督導或其他必要處理。</li>
+          <li>若造成當事人權益受損，當事人可依法請求損害賠償。</li>
+          <li>若有為自己或他人取得不法利益，或損害他人利益的意圖，且足以造成他人損害，最重可處五年以下有期徒刑，並得併科新臺幣一百萬元以下罰金。</li>
+        </ol>
+      </div></details>
+    </article>
+  </section>
+
+  <section class="cta">
+    <h2>不確定能不能說、能不能做？先問督導</h2>
+    <p>以上事項請所有人確實遵守。服務中遇到不知道能不能說、能不能做，或打卡發生異常時，請<b>立即聯繫督導</b>，不得自行處理或事後製作不實紀錄。</p>
+    <div class="contact">
+      <a href="tel:0970532222">📞 公司電話 0970532222</a>
+      <span>💬 LINE ID：biganglee</span>
+    </div>
+  </section>
+
+</div>
+
+<footer class="foot">
+  <p><b>大天使居家長照機構</b>　服務區域：中和・永和・新店</p>
+  <div class="btns">
+    <a class="pill" href="#top">↑ 回到最上面</a>
+    <a class="pill gold" href="service-guide.html">金牌居服員必備常識 →</a>
+  </div>
+</footer>
+
+</body>
+</html>
