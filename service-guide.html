@@ -177,6 +177,13 @@ dl.fields dd{margin-top:2px}
 #report .chat.c1{background:#EAF1FB}#report .chat.c1 .label{color:#0D47A1}
 #report .chat.c2{background:var(--red-bg)}#report .chat.c2 .label{color:var(--red)}
 
+/* 服務後：仁寶紀錄兩欄的標準填法，做成像表單的樣子，員工一看就知道要填什麼 */
+.record{border:2px solid var(--line);border-radius:14px;overflow:hidden;margin:6px 0 10px;background:#fff}
+.record-row{display:flex;border-top:1px solid var(--cream-2)}
+.record-row:first-child{border-top:none}
+.record-k{flex:0 0 42%;background:var(--cream);padding:10px 14px;font-weight:700}
+.record-v{flex:1;padding:10px 14px;font-weight:700;color:var(--green)}
+
 /* 圖片點擊放大 */
 #lb{position:fixed;inset:0;background:rgba(20,14,4,.92);display:none;align-items:center;justify-content:center;z-index:9999;padding:16px;cursor:zoom-out}
 #lb.show{display:flex}
@@ -213,10 +220,11 @@ dl.fields dd{margin-top:2px}
   <nav class="toc" aria-label="目錄">
     <a href="#before"><span class="n">1</span>服務前</a>
     <a href="#during"><span class="n">2</span>服務中</a>
-    <a href="#lost"><span class="n">3</span>找不到個案</a>
-    <a href="#cover"><span class="n">4</span>幫忙代班</a>
-    <a href="#talk"><span class="n">5</span>督導與請假</a>
-    <a href="#form"><span class="n">6</span>異動單怎麼寫</a>
+    <a href="#after"><span class="n">3</span>服務後</a>
+    <a href="#lost"><span class="n">4</span>找不到個案</a>
+    <a href="#cover"><span class="n">5</span>幫忙代班</a>
+    <a href="#talk"><span class="n">6</span>督導與請假</a>
+    <a href="#form"><span class="n">7</span>異動單怎麼寫</a>
   </nav>
 
   <!-- 一、服務前 -->
@@ -278,10 +286,47 @@ dl.fields dd{margin-top:2px}
     </div>
   </section>
 
-  <!-- 三、找不到個案 -->
-  <section class="part" id="lost">
+  <!-- 三、服務後 -->
+  <section class="part" id="after">
     <div class="part-head">
       <span class="badge">三</span>
+      <div><h2>服務後：離開前檢查一遍</h2><p>走出案家前花一分鐘對一遍，少掉很多事後補救。</p></div>
+    </div>
+
+    <div class="item">
+      <h3><span class="no">1.</span>離開前的檢查清單</h3>
+      <ul class="checklist">
+        <li>案家使用過的物品，都<b>放回原位</b></li>
+        <li><b>自己的東西</b>都帶走了，沒有漏在案家</li>
+        <li><b>垃圾</b>帶走，不要留在案家</li>
+        <li><b>打卡內容</b>跟實際做的服務一致</li>
+        <li><b>TOCC</b> 填寫完整</li>
+        <li><b>案家和自己</b>都有簽名</li>
+      </ul>
+    </div>
+
+    <div class="item">
+      <h3><span class="no">2.</span>仁寶紀錄這兩欄要填對</h3>
+      <div class="record">
+        <div class="record-row"><span class="record-k">個案身心狀態</span><span class="record-v">穩定</span></div>
+        <div class="record-row"><span class="record-k">服務執行概況</span><span class="record-v">符合合約內容</span></div>
+      </div>
+      <p>一般情況就照上面這樣填。填之前再看一眼，確定有填、而且填對。</p>
+      <p class="no-say"><b>⚠ 除非危及生命</b>，個案身心狀態不可以填「不佳」。</p>
+      <p class="note">如果真的填了<b>「不佳」</b>或<b>「不符合合約內容」</b>，一定要<b>馬上通知督導和家屬</b>。</p>
+    </div>
+
+    <div class="item">
+      <h3><span class="no">3.</span>仁寶有自費或要後臺調整的地方，馬上發異動</h3>
+      <p>仁寶上如果出現<b>自費</b>，或有<b>需要後臺調整</b>的地方，要<b>第一時間</b>發異動給<b>紫色督導</b>。</p>
+      <p>異動單怎麼寫，看 <a href="#form" style="color:var(--amber-deep);font-weight:700;text-decoration:underline">第七段：異動單怎麼寫</a>。</p>
+    </div>
+  </section>
+
+  <!-- 四、找不到個案 -->
+  <section class="part" id="lost">
+    <div class="part-head">
+      <span class="badge">四</span>
       <div><h2>找不到個案怎麼辦：照順序處理</h2><p>遇到狀況先自己想辦法，這是金牌居服員的基本功。</p></div>
     </div>
     <ol class="steps">
@@ -293,10 +338,10 @@ dl.fields dd{margin-top:2px}
     </ol>
   </section>
 
-  <!-- 四、代班 -->
+  <!-- 五、代班 -->
   <section class="part" id="cover">
     <div class="part-head">
-      <span class="badge">四</span>
+      <span class="badge">五</span>
       <div><h2>幫忙代班：事先問清楚，路線先排好</h2></div>
     </div>
 
@@ -330,10 +375,10 @@ dl.fields dd{margin-top:2px}
     </div>
   </section>
 
-  <!-- 五、督導與請假 -->
+  <!-- 六、督導與請假 -->
   <section class="part" id="talk">
     <div class="part-head">
-      <span class="badge">五</span>
+      <span class="badge">六</span>
       <div><h2>和督導溝通：分清楚緊急和不緊急</h2></div>
     </div>
 
@@ -451,10 +496,10 @@ dl.fields dd{margin-top:2px}
     </div>
   </section>
 
-  <!-- 六、異動單 -->
+  <!-- 七、異動單 -->
   <section class="part" id="form">
     <div class="part-head">
-      <span class="badge">六</span>
+      <span class="badge">七</span>
       <div><h2>異動單怎麼寫：大家講同一種話</h2><p>照格式寫，該給的資訊就不會漏，後臺一看就懂，不用再回頭問你。</p></div>
     </div>
 
