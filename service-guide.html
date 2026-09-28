@@ -155,6 +155,10 @@ dl.fields dd{margin-top:2px}
 .must-note{font-size:.95rem;margin-top:10px}
 .ex-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:12px}
 .ex-grid .chat{margin-top:0}
+.ex-grid .chat .label{display:flex;align-items:center;justify-content:space-between;gap:8px}
+.ex-copy{flex:none;border:1.5px solid currentColor;background:#fff;color:inherit;font-family:var(--sans);font-weight:700;font-size:.82rem;padding:4px 12px;border-radius:999px;cursor:pointer}
+.ex-copy:active{transform:scale(.96)}
+.ex-copy.done{background:var(--gold-glow);color:var(--amber-deep);border-color:var(--gold)}
 .chat.green{background:#E8F4E9}
 /* 異動範例用藍色、告知用綠色，跟圖 1 的顏色一致 */
 .ex-grid .chat:not(.green){background:#EAF1FB}
@@ -648,6 +652,29 @@ dl.fields dd{margin-top:2px}
       if(navigator.clipboard&&window.isSecureContext){ navigator.clipboard.writeText(text).then(done,function(){ fallback(text); done(); }); }
       else { fallback(text); done(); }
     });
+  });
+
+  // 每個異動範例加「複製格式」：從範例文字自動取出欄位名稱（冒號前面），內容清空。
+  // 這樣改範例時不用另外維護一份格式，按鈕永遠跟範例用到的欄位一致。
+  function blankTemplate(text){
+    return text.split('\n').map(function(line){
+      var i=line.indexOf('：');
+      return i>=0 ? line.slice(0,i+1) : line;
+    }).join('\n');
+  }
+  function copyText(text,btn){
+    var done=function(){ btn.textContent='已複製 ✓'; btn.classList.add('done');
+      setTimeout(function(){ btn.textContent='複製格式'; btn.classList.remove('done'); },2000); };
+    if(navigator.clipboard&&window.isSecureContext){ navigator.clipboard.writeText(text).then(done,function(){ fallback(text); done(); }); }
+    else { fallback(text); done(); }
+  }
+  document.querySelectorAll('.ex-grid .chat').forEach(function(box){
+    var label=box.querySelector('.label'), bubble=box.querySelector('.bubble');
+    if(!label||!bubble) return;
+    var btn=document.createElement('button');
+    btn.type='button'; btn.className='ex-copy'; btn.textContent='複製格式';
+    btn.addEventListener('click',function(){ copyText(blankTemplate(bubble.textContent.trim()),btn); });
+    label.appendChild(btn);
   });
 })();
 </script>
