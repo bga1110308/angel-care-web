@@ -143,6 +143,23 @@ dl.fields dd{margin-top:2px}
 .checklist li{position:relative;padding:10px 12px 10px 46px;background:var(--cream);border-radius:12px;margin-bottom:8px}
 .checklist li::before{content:"";position:absolute;left:14px;top:13px;width:20px;height:20px;border:2px solid var(--gold);border-radius:6px;background:#fff}
 
+/* 必填／選填：用實心金色和虛線灰色區分，員工一眼看出哪四欄不能少 */
+.must{background:var(--cream);border-radius:16px;padding:16px;margin-bottom:12px}
+.must-row{display:flex;flex-wrap:wrap;align-items:center;gap:10px;margin-bottom:10px}
+.must-tag{flex:none;font-size:.85rem;font-weight:700;padding:4px 12px;border-radius:999px;color:#fff}
+.must-tag.yes{background:var(--red)}
+.must-tag.opt{background:#8A7A5E}
+.chips2{display:flex;flex-wrap:wrap;gap:6px}
+.chips2 span{background:linear-gradient(135deg,var(--gold-bright),var(--gold));color:#fff;font-weight:700;font-size:.93rem;padding:4px 12px;border-radius:10px}
+.chips2.opt span{background:#fff;color:var(--ink-soft);border:1.5px dashed #C9B48A}
+.must-note{font-size:.95rem;margin-top:10px}
+.ex-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:12px}
+.ex-grid .chat{margin-top:0}
+.chat.green{background:#E8F4E9}
+/* 異動範例用藍色、告知用綠色，跟圖 1 的顏色一致 */
+.ex-grid .chat:not(.green){background:#EAF1FB}
+.ex-grid .chat:not(.green) .label{color:#0D47A1}
+
 /* 圖片點擊放大 */
 #lb{position:fixed;inset:0;background:rgba(20,14,4,.92);display:none;align-items:center;justify-content:center;z-index:9999;padding:16px;cursor:zoom-out}
 #lb.show{display:flex}
@@ -151,7 +168,7 @@ dl.fields dd{margin-top:2px}
 
 @media(max-width:600px){
   body{font-size:16px}
-  .forms,.tpl-grid{grid-template-columns:1fr}
+  .forms,.tpl-grid,.ex-grid{grid-template-columns:1fr}
   .top h1{font-size:1.7rem}
   .part{padding:22px 16px 24px}
   .part-head h2{font-size:1.22rem}
@@ -413,16 +430,26 @@ dl.fields dd{margin-top:2px}
         <div><dt>日期</dt><dd>異動那一天的日期。</dd></div>
         <div><dt>個案</dt><dd>服務的個案姓名。</dd></div>
         <div><dt>督導排班時間<small>（班表時間）</small></dt><dd>督導當時排給你的時間，也就是<b>仁寶上的排班時間</b>。</dd></div>
-        <div><dt>修改打卡時間<small>（打卡時間）</small></dt><dd>你<b>實際到達案家、離開案家</b>的時間。<br><span class="star">★ 一定要符合所申報碼別該有的時數</span>，例如 BA02、BA13、BA15、BA18、BA20 一定要滿 30 分鐘。</dd></div>
-        <div><dt>修改服務項目</dt><dd>你實際執行的服務項目。例：原排 BA02 → 修改為 BA15。</dd></div>
-        <div><dt>修改服務紀錄內容<small>（備註）</small></dt><dd>就是<b>仁寶打卡時的「備註」</b>，也就是填服務紀錄內容的地方。<br>後臺會把你寫的<b>整份複製</b>，蓋掉你原本在仁寶備註裡的內容，所以要寫完整，不能只寫改掉的那一句。</dd></div>
+        <div><dt>請幫忙修改打卡時間<small>（打卡時間）</small></dt><dd>你<b>實際到達案家、離開案家</b>的時間。<br><span class="star">★ 一定要符合所申報碼別該有的時數</span>，例如 BA02、BA13、BA15、BA18、BA20 一定要滿 30 分鐘。</dd></div>
+        <div><dt>請幫忙修改服務項目</dt><dd>你實際執行的服務項目。例：原排 BA02 → 修改為 BA15。</dd></div>
+        <div><dt>請幫忙修改服務紀錄內容<small>（備註）</small></dt><dd>就是<b>仁寶打卡時的「備註」</b>，也就是填服務紀錄內容的地方。<br>後臺會把你寫的<b>整份複製</b>，蓋掉你原本在仁寶備註裡的內容，所以要寫完整，不能只寫改掉的那一句。</dd></div>
         <div><dt>說明</dt><dd>為什麼要改班表，或為什麼做了跟督導排的班不一樣的服務。</dd></div>
       </dl>
     </div>
 
     <div class="item">
       <h3><span class="no">第三步</span>複製格式，只填要改的</h3>
-      <p><b>日期、個案、督導排班時間、說明</b>每次都要寫。其他「修改」開頭的欄位，<b>有改才寫</b>，沒改的那一行可以不寫。</p>
+      <div class="must">
+        <div class="must-row">
+          <span class="must-tag yes">每次一定要寫</span>
+          <div class="chips2"><span>日期</span><span>個案</span><span>督導排班時間</span><span>說明</span></div>
+        </div>
+        <div class="must-row">
+          <span class="must-tag opt">有要改才寫</span>
+          <div class="chips2 opt"><span>請幫忙修改打卡時間</span><span>請幫忙修改服務項目</span><span>請幫忙修改服務紀錄內容</span></div>
+        </div>
+        <p class="must-note">沒有要改的那一行，<b>整行刪掉</b>，不要留空白。下面範例三到六就是只改一部分的寫法。</p>
+      </div>
       <p>按「複製」後，到 LINE 貼上再填就好。</p>
       <div class="tpl-grid">
         <div class="tpl blue">
@@ -431,9 +458,9 @@ dl.fields dd{margin-top:2px}
 日期：
 個案：
 督導排班時間：
-修改打卡時間：
-修改服務項目：
-修改服務紀錄內容：
+請幫忙修改打卡時間：
+請幫忙修改服務項目：
+請幫忙修改服務紀錄內容：
 說明：</pre>
         </div>
         <div class="tpl green">
@@ -454,17 +481,18 @@ dl.fields dd{margin-top:2px}
         <img src="form_change_example.jpg" alt="異動單填寫範例圖" loading="lazy">
         <figcaption>點圖可以放大</figcaption>
       </figure>
+      <div class="ex-grid">
       <div class="chat">
-        <p class="label">範例一：異動（忘記打卡，要改打卡時間）</p>
+        <p class="label">範例一：異動（忘記打卡，要改打卡時間，服務紀錄內容要補充）</p>
 <p class="bubble" style="white-space:pre-line">異動
 日期：114/08/29
 個案：王○○
 督導排班時間：08:30～09:00 BA02
-修改打卡時間：08:25～08:55 BA02
-修改服務紀錄內容：協助個案起床、盥洗；測量血壓 128/72mmHg；協助早餐、服藥；環境整理（客廳、房間）
+請幫忙修改打卡時間：08:25～08:55 BA02
+請幫忙修改服務紀錄內容：協助個案起床、盥洗；測量血壓 128/72mmHg；協助早餐、服藥；環境整理（客廳、房間）
 說明：上班忘記打卡，想起來後立即補打上班卡，並依實際到案時間申請異動。</p>
       </div>
-      <div class="chat">
+      <div class="chat green">
         <p class="label">範例二：異動（告知）（班表不動，回報做了不同服務）</p>
 <p class="bubble" style="white-space:pre-line">異動（告知）
 日期：114/08/29
@@ -473,6 +501,46 @@ dl.fields dd{margin-top:2px}
 自己修改的服務項目：原排 BA20 → 實際執行 BA15
 說明：個案臨時需求改變，需提供不同服務內容。</p>
       </div>
+      <div class="chat">
+        <p class="label">範例三：只改打卡時間</p>
+<p class="bubble" style="white-space:pre-line">異動
+日期：114/09/02
+個案：李○○
+督導排班時間：14:00～14:30 BA02
+請幫忙修改打卡時間：13:58～14:30 BA02
+說明：上班忘打卡。</p>
+      </div>
+      <div class="chat">
+        <p class="label">範例四：只改服務紀錄內容</p>
+<p class="bubble" style="white-space:pre-line">異動
+日期：114/09/03
+個案：陳○○
+督導排班時間：10:00～11:00 BA05
+請幫忙修改服務紀錄內容：炒高麗菜、炒花椰菜、煎魚；打掃客廳
+說明：煎魚沒寫到。</p>
+      </div>
+      <div class="chat">
+        <p class="label">範例五：只改服務項目</p>
+<p class="bubble" style="white-space:pre-line">異動
+日期：114/09/04
+個案：林○○
+督導排班時間：15:00～15:30 BA13
+請幫忙修改服務項目：BA13 改 BA20
+說明：下雨，改在家做運動。</p>
+      </div>
+      <div class="chat">
+        <p class="label">範例六：打卡時間、服務項目、服務紀錄內容都要改</p>
+<p class="bubble" style="white-space:pre-line">異動
+日期：114/09/05
+個案：張○○
+督導排班時間：09:00～09:30 BA13×1
+請幫忙修改打卡時間：09:00～10:00
+請幫忙修改服務項目：BA13×1 改成 BA13×2
+請幫忙修改服務紀錄內容：帶阿公去買便當，再走去全聯買洗衣精
+說明：上班沒打到卡。帶阿公去買便當時，阿公才說要再去買洗衣精，所以比較晚回來。</p>
+      </div>
+      </div>
+      <p class="must-note">範例四的服務紀錄內容要把當天<b>做過的全部寫上去</b>，不是只寫漏掉的「煎魚」，因為後臺會用整段蓋掉原本的紀錄。</p>
     </div>
 
     <div class="item">
